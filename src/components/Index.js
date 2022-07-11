@@ -1,129 +1,179 @@
-import { Carousel, Radio } from 'antd';
-import React, { useState } from 'react';
+import React, {useState, useEffect, useRef } from "react";
 import "antd/dist/antd.css";
+import MainVisual from './MainVisual';
+import Reservation from './Reservation';
+import Facilities from './Facilities';
+import Rooms from './Rooms';
+import Dining from './Dining';
+import Activity from './Activity';
 
-const contentStyle = {
-    height: '100vh',
-    color: '#fff',
-    lineHeight: '100vh',
-    textAlign: 'center',
-    background: '#364d79',
-  };
-  
+import Dots from "./Dots";
+
+const DIVIDER_HEIGHT = 5;
+
+
 const Index = () => {
-    const [dotPosition, setDotPosition] = useState('top');
+    const outerDivRef = useRef();
 
-  const handlePositionChange = ({ target: { value } }) => {
-    setDotPosition(value);
-  };
+    const [scrollIndex, setScrollIndex] = useState(1);
+    useEffect(() => {
+      const wheelHandler = (e) => {
+        e.preventDefault();
+        const { deltaY } = e;
+        const { scrollTop } = outerDivRef.current; // 스크롤 위쪽 끝부분 위치
+        console.log(scrollTop);
+        const pageHeight = window.innerHeight; // 화면 세로길이, 100vh와 같습니다.
+  
+        if (deltaY > 0) {
+          // 스크롤 내릴 때
+          if (scrollTop >= 0 && scrollTop < pageHeight) {
+            //현재 1페이지
+            console.log("현재 1페이지, down");
+            outerDivRef.current.scrollTo({
+              top: pageHeight,
+              left: 0,
+              behavior: "smooth",
+            });
+            setScrollIndex(2);
+          } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 2) {
+            //현재 2페이지s
+            console.log("현재 2페이지, down");
+            outerDivRef.current.scrollTo({
+              top: pageHeight * 2,
+              left: 0,
+              behavior: "smooth",
+            });
+            setScrollIndex(3);
+          } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 3) {
+            //현재 2페이지s
+            console.log("현재 3페이지, down");
+            outerDivRef.current.scrollTo({
+              top: pageHeight * 3,
+              left: 0,
+              behavior: "smooth",
+            });
+            setScrollIndex(4);
+          } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 4) {
+            //현재 2페이지s
+            console.log("현재 4페이지, down");
+            outerDivRef.current.scrollTo({
+              top: pageHeight * 4,
+              left: 0,
+              behavior: "smooth",
+            });
+            setScrollIndex(5);
+          } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 5) {
+            //현재 2페이지s
+            console.log("현재 5페이지, down");
+            outerDivRef.current.scrollTo({
+              top: pageHeight * 5,
+              left: 0,
+              behavior: "smooth",
+            });
+            setScrollIndex(6);
+          }else {
+            // 현재 3페이지
+            console.log("현재 6페이지, down");
+            outerDivRef.current.scrollTo({
+              top: pageHeight * 5,
+              left: 0,
+              behavior: "smooth",
+            });
+            setScrollIndex(6);
+          }
+        } else {
+          // 스크롤 올릴 때
+          if (scrollTop >= 0 && scrollTop < pageHeight) {
+            //현재 1페이지
+            console.log("현재 1페이지, up");
+            outerDivRef.current.scrollTo({
+              top: 0,
+              left: 0,
+              behavior: "smooth",
+            });
+            setScrollIndex(1);
+          } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 2) {
+            //현재 2페이지
+            console.log("현재 2페이지, up");
+            outerDivRef.current.scrollTo({
+              top: 0,
+              left: 0,
+              behavior: "smooth",
+            });
+            setScrollIndex(3);
+          } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 3) {
+            //현재 2페이지
+            console.log("현재 3페이지, up");
+            outerDivRef.current.scrollTo({
+              top: pageHeight,
+              left: 0,
+              behavior: "smooth",
+            });
+            setScrollIndex(3);
+          } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 4) {
+            //현재 2페이지
+            console.log("현재 4페이지, up");
+            outerDivRef.current.scrollTo({
+              top: pageHeight * 2,
+              left: 0,
+              behavior: "smooth",
+            });
+            setScrollIndex(4);
+          } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 5) {
+            //현재 2페이지
+            console.log("현재 5페이지, up");
+            outerDivRef.current.scrollTo({
+              top: pageHeight * 3,
+              left: 0,
+              behavior: "smooth",
+            });
+            setScrollIndex(5);
+          } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 6) {
+            //현재 2페이지
+            console.log("현재 2페이지, up");
+            outerDivRef.current.scrollTo({
+              top: pageHeight * 4,
+              left: 0,
+              behavior: "smooth",
+            });
+            setScrollIndex(6);
+          } else {
+            // 현재 마지막페이지
+            console.log("현재 마지막페이지, up");
+            outerDivRef.current.scrollTo({
+              top: pageHeight * 5,
+              left: 0,
+              behavior: "smooth",
+            });
+            setScrollIndex(6);
+          } 
+        }
+      };
+      const outerDivRefCurrent = outerDivRef.current;
+      outerDivRefCurrent.addEventListener("wheel", wheelHandler);
+      return () => {
+        outerDivRefCurrent.removeEventListener("wheel", wheelHandler);
+      };
+    }, []);
+
+
 
     return (
         <>
-        <header>
-            <h1></h1>
-            <ul>
-                <li>EN</li>
-                <li>Reservation</li>
-                <li>Login</li>
-                <li><span></span><span></span><span></span></li>
-            </ul>
-        </header>
-        <section>
-            <div id="mainVisual">
-            <Carousel effect="fade" autoplay>
-                <div>
-                <h3 style={contentStyle}>1</h3>
-                </div>
-                <div>
-                <h3 style={contentStyle}>2</h3>
-                </div>
-                <div>
-                <h3 style={contentStyle}>3</h3>
-                </div>
-                <div>
-                <h3 style={contentStyle}>4</h3>
-                </div>
-            </Carousel>
-            </div>
-            <div id="reservation">
-                <div id='resBar'>
-                    <ul>
-                        <li></li>
-                        <li>
-                            <span>CHECK IN / OUT</span>
-                            <span>2022-07-08 ~ 2022-07-08</span>
-                        </li>
-                        <li>
-                            <span>Room1</span>
-                            <span>ADULT2</span>
-                            <span>CHILDREN</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div id="facilities">
-                <div>
-                    <div className='facText'></div>
-                    <img src='' alt='' />
-                </div>
-                <div>
-                    <div className='facText'></div>
-                    <img src='' alt='' />
-                </div>
-                <div>
-                    <div className='facText'></div>
-                    <img src='' alt='' />
-                </div>
-                <div>
-                    <img src='' alt='' />
-                </div>
-                <div>
-                    <div className='facText'></div>
-                    <img src='' alt='' />
-                </div>
-            </div>
-            <div id="rooms">
-                <div className='roomText'></div>
-                <Carousel effect="fade"  dotPosition={'right'}>
-                    <div>
-                    <h3 style={contentStyle}>1</h3>
-                    </div>
-                    <div>
-                    <h3 style={contentStyle}>2</h3>
-                    </div>
-                    <div>
-                    <h3 style={contentStyle}>3</h3>
-                    </div>
-                    <div>
-                    <h3 style={contentStyle}>4</h3>
-                    </div>
-                </Carousel>
-            </div>
-            <div id="dining">
-                <div>
-                    <div className='diningText'></div>
-                    <img src="" alt=''/>
-                </div>
-                <div>
-                    <div className='diningText'></div>
-                    <img src="" alt=''/>
-                </div>
-                <div>
-                    <div className='diningText'></div>
-                    <img src="" alt=''/>
-                </div>
-            </div>
-            <div id="activity">
-                <div className='actText'></div>
-                <div>
-                    <img src='' alt='' />
-                </div>
-                {/* 구현이 된다면 흘러가는 슬라이더로 하기 */}
-            </div>
+        <section ref={outerDivRef} className="outer">
+        <Dots scrollIndex={scrollIndex} />
+            <MainVisual/>
+
+            <Reservation/>
+
+            <Facilities/>
+
+            <Rooms/>
+
+            <Dining/>
+
+            <Activity/>
         </section>
-        <footer>
-            <div></div>
-        </footer>
         </>
     );
 };

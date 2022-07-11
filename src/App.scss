@@ -1,0 +1,118 @@
+@font-face {
+    font-family: 'SUIT-SemiBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-SemiBold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'SUIT-SemiBold';
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none; color: inherit;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10vh;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 70px;
+    line-height: 10vh;
+    z-index: 25;
+    color: #fff;
+    transition-property: color;
+    transition-duration: 0.5s;
+    h1{
+        color: #fff;
+    }
+    ul{
+        margin-bottom: 0em;
+        display: flex;
+        li{
+            position: relative;
+            font-family: 'NanumSquare';
+            font-size: 17px;
+            padding: 0 15px;
+            &:last-child{
+                width: 70px;
+                height: 10vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+        }
+    }
+}
+img{
+    vertical-align: top;
+}
+#subMenu{
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    li{
+        font-family: 'NanumSquare';
+        font-size: 40px;
+        margin: 30px 0;
+        font-weight: lighter;
+        cursor: pointer;
+    }
+}
+.height {
+    height: 100vh;
+}
+
+body {
+    margin: 0;
+    overflow-y: hidden;
+  }
+  
+  .outer {
+    height: 100vh;
+    overflow-y: auto;
+  }
+  
+  /* 화면에서 스크롤바 안보이게 */
+  .outer::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .inner {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+  }
+  
+  .bg-yellow {
+    background-color: #f7f6cf;
+  }
+  
+  .bg-blue {
+    background-color: #b6d8f2;
+  }
+  
+  .bg-pink {
+    background-color: #f4cfdf;
+  }
+  
+  .divider {
+    width: 100%;
+    height: 5px;
+    background-color: gray;
+  }
