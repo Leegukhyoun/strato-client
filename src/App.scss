@@ -57,6 +57,8 @@ header{
 }
 img{
     vertical-align: top;
+    height: 100%;
+    width: 100%;
 }
 #subMenu{
     color: #fff;
@@ -115,4 +117,43 @@ body {
     width: 100%;
     height: 5px;
     background-color: gray;
+  }
+
+  #resBar{
+    position: relative;
+    height: 100%;
+    background: #333;
+    ul{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60%;
+      height: 150px;
+      background: #fff;
+      text-align: center;
+      display: flex;
+      li{
+        height: 100%;
+        line-height: 150px;
+        .num{
+          font-size: 20px;
+          font-weight: bold;
+        }
+        span{
+          padding: 0 5px;
+        }
+        &:nth-child(1){
+          width: 25%;
+          border-right: 1px solid #ccc;
+        }
+        &:nth-child(2){
+          width: 40%;
+          border-right: 1px solid #ccc;
+        }
+        &:nth-child(3){
+          width: 35%;
+        }
+      }
+    }
   }

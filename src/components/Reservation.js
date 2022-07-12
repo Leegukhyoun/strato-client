@@ -5,15 +5,15 @@ const Reservation = () => {
             <div id="reservation" className='height'>
                 <div id='resBar'>
                     <ul>
-                        <li></li>
+                        <li>ROOM</li>
                         <li>
                             <span>CHECK IN / OUT</span>
-                            <span>2022-07-08 ~ 2022-07-08</span>
+                            <span><span className='num'>2022-07-08</span> ~ <span className='num'>2022-07-08</span></span>
                         </li>
                         <li>
-                            <span>Room1</span>
-                            <span>ADULT2</span>
-                            <span>CHILDREN</span>
+                            <span>Room <span className='num'>1</span></span>
+                            <span>ADULT <span className='num'>2</span></span>
+                            <span>CHILDREN <span className='num'>0</span></span>
                         </li>
                     </ul>
                 </div>

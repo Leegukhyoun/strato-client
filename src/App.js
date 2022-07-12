@@ -1,7 +1,7 @@
 import "./App.scss";
 import Footer from "./components/Include/Footer";
 import Header from "./components/Include/Header";
-import Index from './components/Index';
+import Index from './components/WheelHandler';
 
 function App() {
   return (
