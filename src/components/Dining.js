@@ -24,13 +24,13 @@ const Dining = () => {
                     <div className='diningText'>
                         <h3>dining2</h3>
                     </div>
-                    <img src="images/dining/dining_2.png" alt='다이닝룸사진2' />
+                    <img src="images/dining/dining_4.png" alt='다이닝룸사진2' />
                 </li>
                 <li className="diningLi" onMouseLeave={onMouseLeave} onMouseEnter={otherLiEnter}>
                     <div className='diningText'>
                         <h3>dining3</h3>
                     </div>
-                    <img src="images/dining/dining_3.png" alt='다이닝룸사진3' />
+                    <img src="images/dining/dining_5.png" alt='다이닝룸사진3' />
                 </li>
             </ul>
         </div>
