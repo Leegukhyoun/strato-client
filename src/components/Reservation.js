@@ -35,6 +35,7 @@ const Reservation = () => {
                         <Calendar fullscreen={false} onPanelChange={onPanelChange} onChange={onChange2}/>
                         </div>
                     </div>
+                    <ReservationBar selectDate={selectDate} selectDate2={selectDate2} CalOn={CalOn}/>
                     <ReservationBar selectDate={selectDate} selectDate2={selectDate2}  CalOn={CalOn}/>
                 </div>
             </div>

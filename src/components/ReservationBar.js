@@ -3,6 +3,8 @@ import {BsFillCalendarFill} from "react-icons/bs"
 import {AiFillPlusSquare} from "react-icons/ai"
 import {AiFillMinusSquare} from "react-icons/ai"
 
+
+
 const ReservationBar = ({selectDate,selectDate2, CalOn}) => {
     const [ Select, SetSelect ] = useState("Strato");
     const [ adultNum, SetAdultNum ] = useState(0);
@@ -43,7 +45,7 @@ const ReservationBar = ({selectDate,selectDate2, CalOn}) => {
                     <span><span className='num'>{selectDate}</span> - <span className='num'>{selectDate2}<BsFillCalendarFill className='calIcon'  onClick={CalOn}/></span></span>
                 </li>
                 <li>
-                <span id='RoomNum'><span className='num'>{Select}</span></span>
+                    <span id='RoomNum'><span className='num'>{Select}</span></span>
                     <span>ADULT　 <span className='num'>{adultNum}</span><AiFillPlusSquare className='arrow' onClick={onAdultPlus}/><AiFillMinusSquare className='arrow' onClick={onAdultMinus}/></span>
                     <span>KIDS　　 <span className='num'>{KidsNum}</span><AiFillPlusSquare className='arrow' onClick={onKidsPlus}/><AiFillMinusSquare className='arrow' onClick={onKidsMinus}/></span>
                 </li>

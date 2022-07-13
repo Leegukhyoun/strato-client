@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Activity = () => {
+    
     return (
             <div id="activity" className='height'>
                 <div className='actText'></div> 
