@@ -353,3 +353,111 @@ body {
   }
 
   //Dining 스타일 end
+  // facilities시작
+  #facilities {
+    min-width: 1200px;
+    // background-color: #000741;
+    position: relative;
+    img {
+      width: 100%;
+    }
+    h1 {
+      width: 250px;
+      text-align: center;
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 60px;
+      font-weight: bold;
+      color: #000741;
+      font-family: 'NanumSquare';
+    }
+    #f-img01 {
+      position: absolute;
+      top: 13%;
+      left: 0;
+      width: 500px;
+      height: 500px;
+      background-color: #ccc;
+      overflow: hidden;
+      box-shadow: 8px 8px 10px rgba(0,0,0,0.1);
+      transition: 0.5s;
+      &:hover {
+        transform: translateY(-3%)
+      }
+    }
+    #f-text {
+      position: absolute;
+      top: 52%;
+      left: 21%;
+      width: 260px;
+      height: 370px;
+      padding: 30px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #000741;
+      div {
+        width: 180px;
+      }
+    }
+    #f-img02 {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 450px;
+      height: 340px;
+      background-color: #ccc;
+      overflow: hidden;
+      box-shadow: 8px 8px 10px rgba(0,0,0,0.1);
+      transition: 0.5s;
+      &:hover {
+        transform: translateX(-50%) translateY(-3%)
+      }
+    }
+    #f-img03 {
+      position: absolute;
+      top: 28%;
+      right: 19%;
+      width: 310px;
+      height: 360px;
+      background-color: #ccc;
+      overflow: hidden;
+      box-shadow: 8px 8px 10px rgba(0,0,0,0.1);
+      transition: 0.5s;
+      &:hover {
+        transform: translateY(-3%)
+      }
+    }
+    #f-img04 {
+      position: absolute;
+      top: 20%;
+      right: 0;
+      width: 280px;
+      height: 280px;
+      background-color: #ccc;
+      overflow: hidden;
+      box-shadow: 8px 8px 10px rgba(0,0,0,0.1);
+      transition: 0.5s;
+      &:hover {
+        transform: translateY(-3%)
+      }
+    }
+    #f-img05 {
+      position: absolute;
+      top: 65%;
+      right: 0;
+      width: 300px;
+      height: 300px;
+      background-color: #ccc;
+      overflow: hidden;
+      box-shadow: 8px 8px 10px rgba(0,0,0,0.1);
+      transition: 0.5s;
+      &:hover {
+        transform: translateY(-3%)
+      }
+    }
+  }
+
+  // facilities 끝
