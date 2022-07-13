@@ -13,6 +13,7 @@ const contentStyle = {
 const MainVisual = () => {
     return (
         <div id="mainVisual" className='height'>
+            <h3 id='main-t'>Awaken to Nature in Bustling City</h3>
             <Carousel effect="fade" autoplay>
                 <div>
                 <h3 style={contentStyle}>
