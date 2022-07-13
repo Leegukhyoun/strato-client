@@ -18,6 +18,7 @@ li{
 a{
     text-decoration: none; color: inherit;
 }
+
 header{
     position: fixed;
     top: 0;
@@ -184,3 +185,96 @@ body {
     font-size: 30px;
     margin-left: 30px;
   }
+  
+  //Rooms 스타일 start
+
+  #rooms{
+    position: relative;
+    text-align: center;
+    .roomText{
+      font-family: 'NanumSquare';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      z-index: 20;
+      h2{
+        font-family: inherit;
+        color: inherit;
+        font-size: 130px;
+        line-height: 0;
+        margin-bottom: 70px;
+      }
+      span{
+        font-family: inherit;
+        font-size: 26px;
+      }
+    }
+  }
+
+  //Rooms 스타일 end
+
+  //Dining 스타일 start
+
+  #dining{
+    ul{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100vw;
+      .mainLi{
+        width: 80%;
+        .diningText{
+          display: block;
+          opacity: 1;
+        }
+      }
+      li{
+        height: 100vh;
+        width: 33.3333%;
+        overflow: hidden;
+        transition: 0.5s;
+        position: relative;
+        &:not(:last-child){
+          border-right: 3px double #fff;
+        }
+        &:hover{
+          width: 80%;
+          .diningText {
+            transition-delay: 0.5s;
+            opacity: 1;
+          }
+        }
+        .diningText {
+          opacity: 0;
+          transition: 0.5s 0s;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+          width: 500px;
+          height: 300px;
+          background: rgba(0, 0, 0, 0.5);
+          z-index: 20;
+          color: #fff;
+          text-align: center;
+          line-height: 300px;
+          h3{
+            font-size: 50px;
+            color: inherit;
+          }
+        }
+        img{
+          height: 100%;
+          width: auto;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+
+  //Dining 스타일 end
