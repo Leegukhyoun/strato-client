@@ -461,3 +461,59 @@ body {
   }
 
   // facilities 끝
+
+  //Footer start
+
+  footer {
+    width: 100%;
+    height: 400px;
+    background: #222;
+    position: absolute;
+    left: 0;
+    bottom: -50%;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    .footerNotice{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      li{
+        margin-right: 40px;
+        font-size: 14px;
+        padding: 10px 0;
+      }
+    }
+    .footerInfo{
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      li{
+        padding-right: 20px;
+        font-size: 14px;
+        padding: 10px 0;
+      }
+      .footerTel{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+      .telNums{
+        padding-left: 20px;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+    }
+    h2{
+      color: inherit;
+    }
+  }
+
+  //Footer end
