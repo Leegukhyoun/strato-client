@@ -18,6 +18,7 @@ li{
 a{
     text-decoration: none; color: inherit;
 }
+
 header{
     position: fixed;
     top: 0;
@@ -34,7 +35,12 @@ header{
     transition-property: color;
     transition-duration: 0.5s;
     h1{
-        color: #fff;
+        a {
+          color: #fff;
+          &:hover {
+            color: #fff;
+          }
+        }
     }
     ul{
         margin-bottom: 0em;
@@ -44,6 +50,12 @@ header{
             font-family: 'NanumSquare';
             font-size: 17px;
             padding: 0 15px;
+            a {
+              color: #fff;
+              &:hover {
+                color: #fff;
+              }
+            }
             &:last-child{
                 width: 70px;
                 height: 10vh;
@@ -72,12 +84,19 @@ img{
         margin: 30px 0;
         font-weight: lighter;
         cursor: pointer;
+        a {
+          color: #fff;
+        }
     }
 }
 .height {
     height: 100vh;
 }
-
+.bg {
+  background: #000741;
+  width: 100vw;
+  height: 100vh;
+}
 body {
     margin: 0;
     overflow-y: hidden;
@@ -259,3 +278,292 @@ body {
   width: 100vw;
   height: 100vh;
 }
+  
+  //Rooms 스타일 start
+
+  #rooms{
+    position: relative;
+    text-align: center;
+    .roomText{
+      font-family: 'NanumSquare';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      z-index: 20;
+      h2{
+        font-family: inherit;
+        color: inherit;
+        font-size: 130px;
+        line-height: 0;
+        margin-bottom: 70px;
+      }
+      span{
+        font-family: inherit;
+        font-size: 26px;
+      }
+    }
+  }
+
+  //Rooms 스타일 end
+
+  //Dining 스타일 start
+
+  #dining{
+    ul{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100vw;
+      .mainLi{
+        width: 80%;
+        .diningText{
+          display: block;
+          opacity: 1;
+        }
+      }
+      li{
+        height: 100vh;
+        width: 33.3333%;
+        overflow: hidden;
+        transition: 0.5s;
+        position: relative;
+        &:not(:last-child){
+          border-right: 3px double #fff;
+        }
+        &:hover{
+          width: 80%;
+          .diningText {
+            transition-delay: 0.5s;
+            opacity: 1;
+          }
+        }
+        .diningText {
+          opacity: 0;
+          transition: 0.5s 0s;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+          width: 500px;
+          height: 300px;
+          background: rgba(0, 0, 0, 0.5);
+          z-index: 20;
+          color: #fff;
+          text-align: center;
+          line-height: 300px;
+          h3{
+            font-size: 50px;
+            color: inherit;
+          }
+        }
+        img{
+          height: 100%;
+          width: auto;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+
+  //Dining 스타일 end
+  // facilities시작
+  #facilities {
+    min-width: 1200px;
+    // background-color: #000741;
+    position: relative;
+    img {
+      width: 100%;
+    }
+    h1 {
+      width: 250px;
+      text-align: center;
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 60px;
+      font-weight: bold;
+      color: #000741;
+      font-family: 'NanumSquare';
+    }
+    #f-img01 {
+      position: absolute;
+      top: 13%;
+      left: 0;
+      width: 500px;
+      height: 500px;
+      background-color: #ccc;
+      overflow: hidden;
+      box-shadow: 8px 8px 10px rgba(0,0,0,0.1);
+      transition: 0.5s;
+      &:hover {
+        transform: translateY(-3%)
+      }
+    }
+    #f-text {
+      position: absolute;
+      top: 52%;
+      left: 21%;
+      width: 260px;
+      height: 370px;
+      padding: 30px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #000741;
+      div {
+        width: 180px;
+      }
+    }
+    #f-img02 {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 450px;
+      height: 340px;
+      background-color: #ccc;
+      overflow: hidden;
+      box-shadow: 8px 8px 10px rgba(0,0,0,0.1);
+      transition: 0.5s;
+      &:hover {
+        transform: translateX(-50%) translateY(-3%)
+      }
+    }
+    #f-img03 {
+      position: absolute;
+      top: 28%;
+      right: 19%;
+      width: 310px;
+      height: 360px;
+      background-color: #ccc;
+      overflow: hidden;
+      box-shadow: 8px 8px 10px rgba(0,0,0,0.1);
+      transition: 0.5s;
+      &:hover {
+        transform: translateY(-3%)
+      }
+    }
+    #f-img04 {
+      position: absolute;
+      top: 20%;
+      right: 0;
+      width: 280px;
+      height: 280px;
+      background-color: #ccc;
+      overflow: hidden;
+      box-shadow: 8px 8px 10px rgba(0,0,0,0.1);
+      transition: 0.5s;
+      &:hover {
+        transform: translateY(-3%)
+      }
+    }
+    #f-img05 {
+      position: absolute;
+      top: 65%;
+      right: 0;
+      width: 300px;
+      height: 300px;
+      background-color: #ccc;
+      overflow: hidden;
+      box-shadow: 8px 8px 10px rgba(0,0,0,0.1);
+      transition: 0.5s;
+      &:hover {
+        transform: translateY(-3%)
+      }
+    }
+  }
+  // facilities 끝
+
+  //reservationP
+  #res {
+    
+    
+    #res-top {
+      width: 100vw;
+      height: 45vh;
+      overflow: hidden;
+      position: relative;
+      h2{
+        font-size: 36px;
+        text-align: center;
+        color: #fff;
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      img {
+        width: 100%;
+      }
+    }
+    #res-confirm {
+      position: absolute;
+      bottom: 0;
+      width: 100vw;
+      height: 55vh;
+      display: flex;
+      // background: #000741;
+    }
+  }
+  // facilities 끝
+
+  //Footer start
+
+  footer {
+    width: 100%;
+    height: 400px;
+    background: #222;
+    position: absolute;
+    left: 0;
+    bottom: -50%;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    .footerNotice{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      li{
+        margin-right: 40px;
+        font-size: 14px;
+        padding: 10px 0;
+      }
+    }
+    .footerInfo{
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      li{
+        padding-right: 20px;
+        font-size: 14px;
+        padding: 10px 0;
+      }
+      .footerTel{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+      .telNums{
+        padding-left: 20px;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+    }
+    h2{
+      color: inherit;
+    }
+  }
+
+  //Footer end

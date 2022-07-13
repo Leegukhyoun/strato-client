@@ -36,6 +36,7 @@ const Reservation = () => {
                         </div>
                     </div>
                     <ReservationBar selectDate={selectDate} selectDate2={selectDate2} CalOn={CalOn}/>
+                    <ReservationBar selectDate={selectDate} selectDate2={selectDate2}  CalOn={CalOn}/>
                 </div>
             </div>
     );

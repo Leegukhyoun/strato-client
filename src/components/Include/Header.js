@@ -1,6 +1,6 @@
 import React,{ useState } from 'react';
 import styled, { css } from 'styled-components'
-
+import { Link } from 'react-router-dom';
 
 const ToggleBg = styled.div`
 position: fixed;
@@ -77,11 +77,11 @@ const Header = () => {
     return (
         <>
             <header>
-            <h1 >안녕하세요</h1>
+            <h1><Link to="/">Strato</Link></h1>
             <ul>
-                <li>EN</li>
-                <li>Reservation</li>
-                <li>Login</li>
+                <li><Link to="/language/">EN</Link></li>
+                <li><Link to ="/reservation/">Reservation</Link></li>
+                <li><Link to="/login">Login</Link></li>
                 <li id="toggle" onClick={toggleBtn}>
                     <ToggleSpan className='toggles' isOn={isOn}/>
                     <ToggleSpan className='toggles' isOn={isOn}/>
@@ -92,11 +92,11 @@ const Header = () => {
             <BlackBg isOn={isOn}/>
             <ToggleBg isOn={isOn}>
                 <ul id='subMenu'>
-                    <li>Reservation</li>
-                    <li>About Us</li>
-                    <li>Rooms</li>
-                    <li>Dining</li>
-                    <li>Activity</li>
+                    <li><Link to ="/reservation/">Reservation</Link></li>
+                    <li><Link to="/aboutus/">About Us</Link></li>
+                    <li><Link to="/room/">Rooms</Link></li>
+                    <li><Link to="/dining/">Dining</Link></li>
+                    <li><Link to="/activity/">Activity</Link></li>
                 </ul>
             </ToggleBg>
         </>  

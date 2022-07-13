@@ -4,8 +4,8 @@ import {AiFillPlusSquare} from "react-icons/ai"
 import {AiFillMinusSquare} from "react-icons/ai"
 
 
-const ReservationBar = ({selectDate,selectDate2, CalOn}) => {
 
+const ReservationBar = ({selectDate,selectDate2, CalOn}) => {
     const [ Select, SetSelect ] = useState("Strato");
     const [ adultNum, SetAdultNum ] = useState(0);
     const [ KidsNum, SetKidsNum ] = useState(0);
