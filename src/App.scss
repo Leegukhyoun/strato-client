@@ -787,10 +787,19 @@ body {
   }
     //aboutus start
     #brandS {
+      position: relative;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      height: 100vh;
+      #aboutCon {
+        position: absolute;
+
+      }
       #brandS-top {
         width: 100vw;
         height: 40vh;
         background: #000741;
+        overflow: hidden;
         h2{
           font-size: 36px;
           text-align: center;
@@ -799,6 +808,11 @@ body {
           top: 25%;
           left: 50%;
           transform: translateX(-50%);
+        }
+        img {
+          width: 100%;
+          height: auto;
+          transform: translateY(-25%);
         }
       }
       #brandS-t {
