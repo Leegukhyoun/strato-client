@@ -1,6 +1,38 @@
-import React from 'react';
+import React,{useState} from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const ResPage = () => {
+    const navigate = useNavigate();
+
+    const [ userData, setUserData ] = useState({
+        name: "",
+        birth: "",
+    })
+    const onChange = (e) => {
+        const { name, value } = e.target;
+        setUserData({
+            ...userData,
+            [name]: value,
+        })
+    }
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        if(userData.name !== "" && userData.birth !== ""){
+            insertCustomer();
+        }
+    }
+
+    function insertCustomer(){
+        axios.post(`http://localhost:3001/userlogin`, userData)
+        .then((result)=>{
+            console.log(result);
+            navigate("/");
+        })
+        .catch(e=>console.log(e))
+    }
+
     return (
         <div id="res">
             <div id="res-top">
@@ -15,12 +47,12 @@ const ResPage = () => {
                         <p>
                         로그인 하시면 회원님의 예약현황을 확인하실 수 있습니다.
                         </p>
-                        <form className="login">
+                        <form className="login" onSubmit={onSubmit}>
                             <div className="lWrap">
-                                <input type="text" placeholder="이름"/>
-                                <input type="password" placeholder="생년월일"/>
+                                <input name="name" type="text" placeholder="이름" onChange={onChange}/>
+                                <input name="birth" type="password" placeholder="생년월일" onChange={onChange}/>
                             </div>
-                            <button>로그인</button>
+                            <button type='submit'>로그인</button>
                         </form>
                     </div>
                     <div className="member">

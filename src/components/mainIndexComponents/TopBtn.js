@@ -3,7 +3,6 @@ import {BsArrowUpCircleFill} from "react-icons/bs"
 
 
 const TopBtn = () => {
-    
     return (
         <div style={{
             position: 'absolute',
