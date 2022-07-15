@@ -81,7 +81,7 @@ const Header = () => {
             <ul>
                 <li><Link to="/language">EN</Link></li>
                 <li><Link to ="/reservation">Reservation</Link></li>
-                <li><Link to="/login">Login</Link></li>
+                <li><Link to="/reservation">Login</Link></li>
                 <li id="toggle" onClick={toggleBtn}>
                     <ToggleSpan className='toggles' isOn={isOn}/>
                     <ToggleSpan className='toggles' isOn={isOn}/>
