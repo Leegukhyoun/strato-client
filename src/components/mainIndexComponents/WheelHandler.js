@@ -11,6 +11,7 @@ const Index = () => {
   console.log('is it work')
   useEffect(() => {
     const wheelHandler = (e) => {
+      console.log(e);
       e.preventDefault();
       const { deltaY } = e;
       const { scrollTop } = outerDivRef.current; // 스크롤 위쪽 끝부분 위치
