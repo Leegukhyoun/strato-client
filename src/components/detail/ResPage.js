@@ -17,8 +17,8 @@ const ResPage = () => {
                         </p>
                         <form className="login">
                             <div className="lWrap">
-                                <input type="text" placeholder="아이디"/>
-                                <input type="password" placeholder="비밀번호"/>
+                                <input type="text" placeholder="이름"/>
+                                <input type="password" placeholder="생년월일"/>
                             </div>
                             <button>로그인</button>
                         </form>
@@ -26,12 +26,12 @@ const ResPage = () => {
                     <div className="member">
                         <h3>비회원 예약조회</h3>
                         <p>비회원으로 예약하신 분은 예약번호와 예약 시 설정하신
-                            비밀번호를 입력하시면 예약의 상세정보를 확인하실 수 있습니다.
+                            정보를 입력하시면 예약의 상세정보를 확인하실 수 없습니다.
                         </p>
                         <form className="login">
                             <div className="lWrap">
-                                <input type="text" placeholder="아이디"/>
-                                <input type="password" placeholder="비밀번호"/>
+                                <input type="text" placeholder="이름"/>
+                                <input type="password" placeholder="생년월일"/>
                             </div>
                             <button>예약확인</button>
                         </form>

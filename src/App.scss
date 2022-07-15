@@ -475,6 +475,9 @@ img{
 
   //reservationP start
   #res {
+    position: relative;
+    overflow-y: scroll;
+    height: 100vh;
     #res-top {
       width: 100vw;
       height: 40vh;
@@ -496,6 +499,8 @@ img{
       }
     }
     #res-confirm {
+      position: absolute;
+      left: 17%;
       width: 100vw;
       max-width: 1200px;
       margin: 0 auto;
@@ -848,17 +853,67 @@ img{
   //sign up
 
   .loginBox{
-    ul{
-      font-size: 16px;
+    form{
       width: 100%;
-      li{
-        border-bottom: 1px solid #ccc;
+      ul{
+        font-size: 16px;
+        width: 100%;
+        li{
+          border-bottom: 1px solid #ccc;
+          padding: 10px 0;
+          margin-top: 2px;
+          button{
+            border: none;
+            transition: 0.5s;
+            padding: 4px 9px;
+            margin-left: 15px;
+            color: #aaa;
+            cursor: pointer;
+            background: #555;
+            &:hover{
+              color: #ddd;
+              background: #222;
+            }
+          }
+        }
       }
     }
+
   }
   .textBox{
     text-align: left;
     padding-left: 20px;
+    input{
+      border: 1px solid #333;
+      outline: none;
+      padding: 10px 15px 10px 15px;
+      margin-left: 10px;
+      width: 400px;
+    }
+    .radioInput{
+      width: 20px;
+      margin-right: 30px;
+    }
+    span{
+      margin-left: 20px;
+    }
   }
 
+
   //sign up
+
+  //topIcon
+  #TopIcon{
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    font-size: 50px;
+    color: inherit;
+    transition: 0.5s;
+    cursor: pointer;
+    &:hover{
+      transform: scale(1.1);
+    }
+  }
+
+  //topIcon

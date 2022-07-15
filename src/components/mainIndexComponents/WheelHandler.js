@@ -3,14 +3,15 @@ import "antd/dist/antd.css";
 import Dots from "./Dots";
 import MainIndex from "./MainIndex";
 
-
 const Index = () => {
+ 
+ 
   const outerDivRef = useRef();
   const [scrollIndex, setScrollIndex] = useState(1);
   const [isOn, setIsOn] = useState(false);
-  console.log('is it work')
   useEffect(() => {
     const wheelHandler = (e) => {
+      console.log(e);
       e.preventDefault();
       const { deltaY } = e;
       const { scrollTop } = outerDivRef.current; // 스크롤 위쪽 끝부분 위치
