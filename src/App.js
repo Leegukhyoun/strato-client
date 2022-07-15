@@ -14,14 +14,9 @@ import TopBtn from "./components/mainIndexComponents/TopBtn";
 
 
 function App() {
-  const onWheel =(e)=>{
-    const wrap = document.querySelector('.App');
-    const { scrollTop } = wrap;
-    console.log(scrollTop, "여기에요");
-    console.log(e);
-  } 
+
   return (
-    <div className="App" onWheel={onWheel} >
+    <div className="App">
       <Header/>
       <Routes>
         <Route path="/" element={<Index/>}/>
