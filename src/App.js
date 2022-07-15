@@ -8,21 +8,31 @@ import LoginPage from './components/Login/LoginPage';
 import ResPage from "./components/detail/ResPage";
 import AboutUs from "./components/detail/AboutUs";
 import RoomsDetail from "./components/detail/RoomsDetail";
+import Signup from "./components/detail/Signup";
+import TopBtn from "./components/mainIndexComponents/TopBtn";
 
 
 
 function App() {
+  const onWheel =(e)=>{
+    const wrap = document.querySelector('.App');
+    const { scrollTop } = wrap;
+    console.log(scrollTop, "여기에요");
+    console.log(e);
+  } 
   return (
-    <div className="App">
+    <div className="App" onWheel={onWheel} >
       <Header/>
       <Routes>
         <Route path="/" element={<Index/>}/>
-        <Route path="/reservation/" element={<ResPage/>}/>
+        <Route path="/reservation" element={<ResPage/>}/>
         <Route path="/login" element={<LoginPage/>}/>
         <Route path="/aboutus" element={<AboutUs />}/>
         <Route path="/rooms" element={<RoomsDetail />} />
         <Route path="/dining" element={<DiningIndex/>} />
+        <Route path="/membership" element={<Signup/>} />
       </Routes>
+      <TopBtn/>
       <Footer/>
     </div>
   );
