@@ -785,3 +785,54 @@ body {
     }
 
   }
+    //aboutus start
+    #brandS {
+      #brandS-top {
+        width: 100vw;
+        height: 40vh;
+        background: #000741;
+        h2{
+          font-size: 36px;
+          text-align: center;
+          color: #fff;
+          position: absolute;
+          top: 25%;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+      #brandS-t {
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 120px;
+        h2 {
+          width: 500px;
+          margin: 0 auto;
+          padding: 30px 0;
+          font-size: 32px;
+        }
+        p {
+          padding-top: 30px;
+          width: 500px;
+          margin: 0 auto;
+          font-size: 18px;
+        }
+      }
+      #brandS-m {
+        padding-top: 30px;
+        max-width: 1200px;
+        margin: 0 auto; 
+        div {
+          display: flex;
+          h2 {
+            font-size: 28px;
+          }
+          p {
+            width: 500px;
+          }
+        }
+  
+      }
+    }
+    //aboutus end
