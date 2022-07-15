@@ -66,8 +66,10 @@ const RoomsDetail = () => {
                                     <li>
                                         <h3>침대</h3>
                                         <div className='roomBedType'>
-                                            <span>MAIN BEDROOM</span><span>퀸 1</span>
-                                            <span>SUB BEDROOM1</span><span>더블 1</span>
+                                            <span>MAIN BEDROOM</span>
+                                            <span>퀸 1</span>
+                                            <span>SUB BEDROOM1</span>
+                                            <span>더블 1</span>
                                         </div>
                                     </li>
                                     <li>
@@ -102,8 +104,10 @@ const RoomsDetail = () => {
                                     <li>
                                         <h3>침대</h3>
                                         <div className='roomBedType'>
-                                            <span>MAIN BEDROOM</span><span>퀸 1</span>
-                                            <span>SUB BEDROOM1</span><span>더블 1, 싱글 1</span>
+                                            <span>MAIN BEDROOM</span>
+                                            <span>퀸 1</span>
+                                            <span>SUB BEDROOM1</span>
+                                            <span>더블 1, 싱글 1</span>
                                         </div>
                                     </li>
                                     <li>
@@ -132,9 +136,12 @@ const RoomsDetail = () => {
                                     <li>
                                         <h3>침대</h3>
                                         <div className='roomBedType'>
-                                            <span>MAIN BEDROOM</span><span>킹 1</span>
-                                            <span>SUB BEDROOM1</span><span>더블 1, 싱글 1</span>
-                                            <span>SUB BEDROOM2</span><span>트윈 1</span>
+                                            <span>MAIN BEDROOM</span>
+                                            <span>킹 1</span>
+                                            <span>SUB BEDROOM1</span>
+                                            <span>더블 1, 싱글 1</span>
+                                            <span>SUB BEDROOM2</span>
+                                            <span>트윈 1</span>
                                         </div>
                                     </li>
                                     <li>
