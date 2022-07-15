@@ -8,6 +8,7 @@ const Index = () => {
   const outerDivRef = useRef();
   const [scrollIndex, setScrollIndex] = useState(1);
   const [isOn, setIsOn] = useState(false);
+  console.log('is it work')
   useEffect(() => {
     const wheelHandler = (e) => {
       e.preventDefault();

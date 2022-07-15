@@ -79,8 +79,8 @@ const Header = () => {
             <header>
             <h1><Link to="/">Strato</Link></h1>
             <ul>
-                <li><Link to="/language/">EN</Link></li>
-                <li><Link to ="/reservation/">Reservation</Link></li>
+                <li><Link to="/language">EN</Link></li>
+                <li><Link to ="/reservation">Reservation</Link></li>
                 <li><Link to="/login">Login</Link></li>
                 <li id="toggle" onClick={toggleBtn}>
                     <ToggleSpan className='toggles' isOn={isOn}/>
@@ -92,11 +92,11 @@ const Header = () => {
             <BlackBg isOn={isOn}  onClick={toggleBtn}/>
             <ToggleBg isOn={isOn}>
                 <ul id='subMenu'>
-                    <li><Link to ="/reservation/" onClick={toggleBtn}>Reservation</Link></li>
-                    <li><Link to="/aboutus/" onClick={toggleBtn}>About Us</Link></li>
-                    <li><Link to="/room/"  onClick={toggleBtn}>Rooms</Link></li>
+                    <li><Link to ="/reservation" onClick={toggleBtn}>Reservation</Link></li>
+                    <li><Link to="/aboutus" onClick={toggleBtn}>About Us</Link></li>
+                    <li><Link to="/rooms"  onClick={toggleBtn}>Rooms</Link></li>
                     <li><Link to="/dining" onClick={toggleBtn}>Dining</Link></li>
-                    <li><Link to="/activity/" onClick={toggleBtn}>Activity</Link></li>
+                    <li><Link to="/activity" onClick={toggleBtn}>Activity</Link></li>
                 </ul>
             </ToggleBg>
         </>  
