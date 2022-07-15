@@ -5,7 +5,7 @@ const ResPage = () => {
         <div id="res">
             <div id="res-top">
                 <img src='../images/dining_visual_05_2.png' alt=""/>
-                <h2>예약조회</h2>
+                <h2>Reservation</h2>
             </div>
             <div id="res-confirm">
                 <h2>예약조회</h2>

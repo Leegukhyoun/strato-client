@@ -13,7 +13,6 @@ const TopBtn = () => {
             // color: scrollNow == 0 ? '#fff' : '#000',
             transition: 0.5+'s',
             cursor: 'pointer',
-            
         }}>
             <BsArrowUpCircleFill/>
         </div>
