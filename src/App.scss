@@ -844,3 +844,111 @@ img{
     }
 
   }
+    //aboutus start
+    #brandS {
+      position: relative;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      height: 100vh;
+      #brandS-top {
+        width: 100vw;
+        height: 40vh;
+        background: #000741;
+        overflow: hidden;
+        h2{
+          font-size: 36px;
+          text-align: center;
+          color: #fff;
+          position: absolute;
+          top: 25%;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        img {
+          width: 100%;
+          height: auto;
+          transform: translateY(-25%);
+        }
+      }
+      #aboutCon {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+          #brandS-t {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 120px;
+            h1 {
+              font-size: 30px;
+              color: #000741;
+            }
+            h2 {
+              width: 500px;
+              margin: 0 auto;
+              padding: 20px 0;
+              font-size: 36px;
+              color: #000741;
+            }
+            p {
+              padding: 30px;
+              width: 525px;
+              margin: 0 auto;
+              font-size: 18px;
+              color: #555;
+            }
+          }
+          #brandS-m {
+            position: relative;
+            width: 100vw;
+            padding: 100px 0;
+            padding-top: 30px;
+            max-width: 1200px;
+            margin: 0 auto; 
+            display: flex;
+            flex-direction: column;
+            #bM {
+              position: absolute;
+              right: -30%;
+              width: 100vw;
+              // height: 100vh;
+              // background-color: #000741;
+              #brandS-b {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                text-align: center;
+                color: #fff;
+                p {
+                  font-size: 21px;
+                  span {
+                    font-size: 36px;
+                  }
+                }
+              }
+            }
+            #bT {
+              display: flex;    
+              position: relative;    
+              top: 980px; 
+              right: -70px;
+              padding-bottom: 100px;
+                h2 {
+                  padding: 30px 0;
+                  font-size: 28px;
+                  margin-right: 30px;
+                  font-size: 36px;  
+                }
+                p {
+                  width: 600px;
+                  padding: 30px;
+                  font-size: 16px;
+                }
+                
+              }
+            }
+        }
+    }
+    //aboutus end
