@@ -473,10 +473,8 @@ img{
   }
   // facilities 끝
 
-  //reservationP
+  //reservationP start
   #res {
-    
-    
     #res-top {
       width: 100vw;
       height: 40vh;
@@ -499,11 +497,73 @@ img{
     }
     #res-confirm {
       width: 100vw;
+      max-width: 1200px;
+      margin: 0 auto;
       display: flex;
-      // background: #000741;
+      flex-direction: column;
+      text-align: center;
+      h2 {
+        font-size: 30px;
+        padding: 50px;
+        border-bottom: 3px solid #000741;
+      }
+      #mWrap {
+        width: 100vw;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        width: 100vw;
+        justify-content: space-between;
+        padding-bottom: 50px;
+        border-bottom: 1px solid #000741;
+        .member {
+          width: 50vw;
+          padding: 15px;
+          h3 {
+            font-size: 28px;
+          }
+          p {
+            width: 500px;
+            height: 60px;
+            font-size: 15px;
+          }
+          .login {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            button {
+              width: 30%;
+              outline: none;
+              border: none;
+            }
+            .lWrap {
+              width: 68%;
+              display: flex;
+              font-size: 15px;
+              flex-direction: column;
+              input {
+                color: #555;
+                line-height: 50px;
+                padding-left: 16px;
+                outline: none;
+                border: 1px solid #555;
+                background: #fff;
+                &:nth-child(1) {
+                  margin-bottom: 5px;
+                }
+              }
+              
+            }
+            
+            
+          }
+
+        }
+      }
     }
   }
-  // facilities 끝
+   //reservationP start
+
 
   //roomDetail start
 
