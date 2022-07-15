@@ -20,26 +20,28 @@ const RoomsDetail = () => {
                                 <img src='images/Rooms/rooms_visual_1.png' alt='스탠다드방' />
                             </div>
                             <div className='roomExplain'>
-                                <h3>SUPERIOR</h3>
+                                <h2>STANDARD</h2>
                                 <ul>
                                     <li>
-                                        <p>가격</p>
-                                        <span>220,000₩ (1박 기준)</span>
+                                        <h3>가격</h3>
+                                        <span>180,000₩ (1박 기준)</span>
                                     </li>
                                     <li>
-                                        <p>수용인원</p>
-                                        <span>2 ~ 5인</span>
+                                        <h3>수용인원</h3>
+                                        <span>2 ~ 4인</span>
                                     </li>
                                     <li>
-                                        <p>방 구조</p>
+                                        <h3>방 구조</h3>
                                         <span>거실 1, 침실 1, 욕실 1</span>
                                     </li>
                                     <li>
-                                        <p>침대</p>
-                                        <span>더블 1, 싱글 1</span>
+                                        <h3>침대</h3>
+                                        <div className='roomBedType'>
+                                            <span>더블 1, 싱글 1</span>
+                                        </div>
                                     </li>
                                     <li>
-                                        <p>체크인 / 체크아웃</p>
+                                        <h3>체크인 / 체크아웃</h3>
                                         <span>15:00 / 11:00</span>
                                     </li>
                                 </ul>
@@ -47,26 +49,29 @@ const RoomsDetail = () => {
                         </li>
                         <li className='superior'>
                             <div className='roomExplain'>
-                                <h3>SUPERIOR</h3>
+                                <h2>SUPERIOR</h2>
                                 <ul>
                                     <li>
-                                        <p>가격</p>
+                                        <h3>가격</h3>
                                         <span>220,000₩ (1박 기준)</span>
                                     </li>
                                     <li>
-                                        <p>수용인원</p>
+                                        <h3>수용인원</h3>
                                         <span>2 ~ 5인</span>
                                     </li>
                                     <li>
-                                        <p>방 구조</p>
-                                        <span>거실 1, 침실 1, 욕실 1</span>
+                                        <h3>방 구조</h3>
+                                        <span>거실 1, 침실 2, 욕실 1</span>
                                     </li>
                                     <li>
-                                        <p>침대</p>
-                                        <span>더블 1, 싱글 1</span>
+                                        <h3>침대</h3>
+                                        <div className='roomBedType'>
+                                            <span>MAIN BEDROOM</span><span>퀸 1</span>
+                                            <span>SUB BEDROOM1</span><span>더블 1</span>
+                                        </div>
                                     </li>
                                     <li>
-                                        <p>체크인 / 체크아웃</p>
+                                        <h3>체크인 / 체크아웃</h3>
                                         <span>15:00 / 11:00</span>
                                     </li>
                                 </ul>
@@ -80,26 +85,29 @@ const RoomsDetail = () => {
                                 <img src='images/Rooms/rooms_visual_3.png' alt='스탠다드방' />
                             </div>
                             <div className='roomExplain'>
-                                <h3>SUPERIOR</h3>
+                                <h2>DELUXE</h2>
                                 <ul>
                                     <li>
-                                        <p>가격</p>
-                                        <span>220,000₩ (1박 기준)</span>
+                                        <h3>가격</h3>
+                                        <span>270,000₩ (1박 기준)</span>
                                     </li>
                                     <li>
-                                        <p>수용인원</p>
-                                        <span>2 ~ 5인</span>
+                                        <h3>수용인원</h3>
+                                        <span>3 ~ 6인</span>
                                     </li>
                                     <li>
-                                        <p>방 구조</p>
-                                        <span>거실 1, 침실 1, 욕실 1</span>
+                                        <h3>방 구조</h3>
+                                        <span>거실 1, 침실 2, 욕실 2</span>
                                     </li>
                                     <li>
-                                        <p>침대</p>
-                                        <span>더블 1, 싱글 1</span>
+                                        <h3>침대</h3>
+                                        <div className='roomBedType'>
+                                            <span>MAIN BEDROOM</span><span>퀸 1</span>
+                                            <span>SUB BEDROOM1</span><span>더블 1, 싱글 1</span>
+                                        </div>
                                     </li>
                                     <li>
-                                        <p>체크인 / 체크아웃</p>
+                                        <h3>체크인 / 체크아웃</h3>
                                         <span>15:00 / 11:00</span>
                                     </li>
                                 </ul>
@@ -107,26 +115,30 @@ const RoomsDetail = () => {
                         </li>
                         <li className='suite'>
                             <div className='roomExplain'>
-                                <h3>SUPERIOR</h3>
+                                <h2>SUITE</h2>
                                 <ul>
                                     <li>
-                                        <p>가격</p>
-                                        <span>220,000₩ (1박 기준)</span>
+                                        <h3>가격</h3>
+                                        <span>350,000₩ (1박 기준)</span>
                                     </li>
                                     <li>
-                                        <p>수용인원</p>
-                                        <span>2 ~ 5인</span>
+                                        <h3>수용인원</h3>
+                                        <span>4 ~ 8인</span>
                                     </li>
                                     <li>
-                                        <p>방 구조</p>
-                                        <span>거실 1, 침실 1, 욕실 1</span>
+                                        <h3>방 구조</h3>
+                                        <span>거실 1, 침실 3, 욕실 2</span>
                                     </li>
                                     <li>
-                                        <p>침대</p>
-                                        <span>더블 1, 싱글 1</span>
+                                        <h3>침대</h3>
+                                        <div className='roomBedType'>
+                                            <span>MAIN BEDROOM</span><span>킹 1</span>
+                                            <span>SUB BEDROOM1</span><span>더블 1, 싱글 1</span>
+                                            <span>SUB BEDROOM2</span><span>트윈 1</span>
+                                        </div>
                                     </li>
                                     <li>
-                                        <p>체크인 / 체크아웃</p>
+                                        <h3>체크인 / 체크아웃</h3>
                                         <span>15:00 / 11:00</span>
                                     </li>
                                 </ul>
