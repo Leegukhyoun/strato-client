@@ -25,6 +25,7 @@ const Reservation = () => {
     return (
             <div id="reservation" className='height'>
                 <div id='resBar'>
+                    <div id='blackBg'></div>
                     <div id='cal'  style={{display:CalState ? 'block' : 'none'}}>
                         <div className="site-calendar-demo-card">
                         <Calendar fullscreen={false} onPanelChange={onPanelChange} onChange={onChange}/>
@@ -38,6 +39,7 @@ const Reservation = () => {
                     <ReservationBar selectDate={selectDate} selectDate2={selectDate2} CalOn={CalOn}/>
                     <ReservationBar selectDate={selectDate} selectDate2={selectDate2}  CalOn={CalOn}/>
                 </div>
+
             </div>
     );
 };

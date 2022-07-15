@@ -89,14 +89,14 @@ const Header = () => {
                 </li>
             </ul>
             </header>
-            <BlackBg isOn={isOn}/>
+            <BlackBg isOn={isOn}  onClick={toggleBtn}/>
             <ToggleBg isOn={isOn}>
                 <ul id='subMenu'>
-                    <li><Link to ="/reservation">Reservation</Link></li>
-                    <li><Link to="/aboutus">About Us</Link></li>
-                    <li><Link to="/rooms">Rooms</Link></li>
-                    <li><Link to="/dining">Dining</Link></li>
-                    <li><Link to="/activity">Activity</Link></li>
+                    <li><Link to ="/reservation" onClick={toggleBtn}>Reservation</Link></li>
+                    <li><Link to="/aboutus" onClick={toggleBtn}>About Us</Link></li>
+                    <li><Link to="/rooms"  onClick={toggleBtn}>Rooms</Link></li>
+                    <li><Link to="/dining" onClick={toggleBtn}>Dining</Link></li>
+                    <li><Link to="/activity" onClick={toggleBtn}>Activity</Link></li>
                 </ul>
             </ToggleBg>
         </>  

@@ -5,7 +5,7 @@
     font-style: normal;
 }
 @import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
-
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 *{
     margin: 0;
     padding: 0;
@@ -128,7 +128,7 @@ body {
   #resBar{
     position: relative;
     height: 100%;
-    background: #333;
+    background: url(../public/images/Superior-Room_2.png) center center/cover;
     ul{
       position: absolute;
       top: 60%;
@@ -473,7 +473,7 @@ body {
     
     #res-top {
       width: 100vw;
-      height: 45vh;
+      height: 40vh;
       overflow: hidden;
       position: relative;
       h2{
@@ -487,13 +487,12 @@ body {
       }
       img {
         width: 100%;
+        height: auto;
+        transform: translateY(-45%);
       }
     }
     #res-confirm {
-      position: absolute;
-      bottom: 0;
       width: 100vw;
-      height: 55vh;
       display: flex;
       // background: #000741;
     }
@@ -543,6 +542,7 @@ body {
     height: 400px;
     background: #222;
     position: absolute;
+    z-index: 30;
     left: 0;
     bottom: -50%;
     transition: 0.5s;
@@ -591,3 +591,137 @@ body {
   }
 
   //Footer end
+
+
+  //activity
+#actText{
+  position: absolute;
+  z-index: 3;
+  color: #fff;
+  text-align: center;
+  top: 10%;
+  left: 50%;
+  font-size: 20px;
+  transform: translateX(-50%);
+  ul{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 300px;
+    width: 100vw;
+    height: 400px;
+    li{
+      margin-top: 30px;
+      width: 24%;
+      background: rgb(252, 252, 252);
+      color: #000;
+      border-radius: 5px 5px 20px 20px;
+      &:hover{
+        img{
+          transform: scale(1.2);
+        }
+      }
+      .actWindow{
+        overflow: hidden;
+        border-radius: 5px 5px 10px 10px;
+      }
+      img{
+        width: 100%;
+        height: 100%;
+        transition: 0.5s;
+
+      }
+      p{
+        line-height: 170px;
+        font-family: 'NanumSquare';
+      }
+    }
+  }
+  p{
+    margin-bottom: 10px;
+    &:nth-child(1){
+      font-size: 50px;
+      margin-bottom: 30px;
+    }
+  }
+}
+#reservation{
+  position: relative;
+}
+#blackBg{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+  //activity
+
+
+  //dining
+  #diningIndex{
+    position: relative;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('../public/images/dining_visual_03_1.png') center center / 100% no-repeat;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  #diningBg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    font-size: 80px;
+    z-index: 3;
+    transform: translate(-50%,-50%);
+  }
+  #diningCon{
+    h2, p , tr, td{
+      font-family: 'Pretendard';
+    }
+    position: relative;
+    top: 100vh;
+    height: 300vh;
+    width: 100vw;
+    background: #fff;
+    z-index: 3;
+    padding-left: 300px;
+    font-size: 18px;
+    padding-top: 50px;
+    font-weight: normal;
+    h2{
+      font-weight: bold;
+      margin-top: 90px;
+      margin-bottom: 30px;
+    }
+    .gray{
+      font-size: 13px;
+      color: #aaa;
+    }
+    table{
+      text-align: center;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      td{
+        padding: 18px 0;
+        border-top: 1px solid #ccc;
+        &:nth-child(1){
+          width: 270px;
+        }
+        &:nth-child(2){
+          width: 270px;
+        }
+        &:nth-child(3){
+          width: 800px;
+        }
+        &:not(:last-child){
+          border-right: 1px solid #ccc;
+        }
+      }
+      tr{
+        border-bottom: 1px solid #ccc;
+      }
+    }
+
+  }
