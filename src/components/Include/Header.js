@@ -96,7 +96,7 @@ const Header = () => {
                     <li><Link to="/aboutus" onClick={toggleBtn}>About Us</Link></li>
                     <li><Link to="/rooms"  onClick={toggleBtn}>Rooms</Link></li>
                     <li><Link to="/dining" onClick={toggleBtn}>Dining</Link></li>
-                    <li><Link to="/activity" onClick={toggleBtn}>Activity</Link></li>
+                    <li><Link to="/membership" onClick={toggleBtn}>Sign-Up</Link></li>
                 </ul>
             </ToggleBg>
         </>  

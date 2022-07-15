@@ -8,6 +8,7 @@ import LoginPage from './components/Login/LoginPage';
 import ResPage from "./components/detail/ResPage";
 import AboutUs from "./components/detail/AboutUs";
 import RoomsDetail from "./components/detail/RoomsDetail";
+import Signup from "./components/detail/Signup";
 
 
 
@@ -17,11 +18,12 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<Index/>}/>
-        <Route path="/reservation/" element={<ResPage/>}/>
+        <Route path="/reservation" element={<ResPage/>}/>
         <Route path="/login" element={<LoginPage/>}/>
         <Route path="/login" element={<AboutUs />}/>
         <Route path="/rooms" element={<RoomsDetail />} />
         <Route path="/dining" element={<DiningIndex/>} />
+        <Route path="/membership" element={<Signup/>} />
       </Routes>
       <Footer/>
     </div>
