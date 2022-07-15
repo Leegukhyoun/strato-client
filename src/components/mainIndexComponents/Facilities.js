@@ -3,7 +3,7 @@ import React from 'react';
 const Facilities = () => {
     return (
         <div id="facilities" className='height'>
-            <h1>strato wellness</h1>
+            <h1>Strato wellness</h1>
             <div id="f-img01">
                 <div className='facText'></div>
                 {/* images/wellness_01.png */}
