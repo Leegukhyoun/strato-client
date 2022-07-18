@@ -4,12 +4,12 @@ import Header from "./components/Include/Header";
 import Index from "./components/mainIndexComponents/WheelHandler";
 import { Routes, Route } from 'react-router-dom';
 import DiningIndex from "./components/Dining/DiningIndex";
-import LoginPage from './components/Login/LoginPage';
 import ResPage from "./components/detail/ResPage";
 import AboutUs from "./components/detail/AboutUs";
 import RoomsDetail from "./components/detail/RoomsDetail";
-import Signup from "./components/detail/Signup";
 import TopBtn from "./components/mainIndexComponents/TopBtn";
+import SignUpContainer from "./components/Container/SignUpContainer";
+import LoginContainer from "./components/Container/LoginContainer";
 
 
 
@@ -20,12 +20,12 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<Index/>}/>
-        <Route path="/reservation" element={<ResPage/>}/>
-        <Route path="/login" element={<LoginPage/>}/>
+        <Route path="/reservation" element={<LoginContainer/>}/>
+        <Route path="/reservation" element={<LoginContainer/>}/>
         <Route path="/aboutus" element={<AboutUs />}/>
         <Route path="/rooms" element={<RoomsDetail />} />
         <Route path="/dining" element={<DiningIndex/>} />
-        <Route path="/membership" element={<Signup/>} />
+        <Route path="/membership" element={<SignUpContainer/>} />
       </Routes>
       <TopBtn/>
       <Footer/>

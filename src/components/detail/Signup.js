@@ -1,17 +1,22 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import PopupPostCode from './AddressSearch/PopupPostCode';
 import PopupDom from './AddressSearch/PopupDom';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import Footer from '../Include/Footer';
 
-const Signup = () => {
-    const navigate = useNavigate();
+const Signup = ({onChange, onHome, onSubmit, createUser}) => {
+    console.log(onChange, createUser)
     
+    //우편번호 관리
     const onAddData = (data) => {
         console.log(data);
-        setUserData({
-            ...userData,
-            addr1 : data.address
+        const postAdd = data.address;
+        onChange({
+            target : {
+                name : 'addr1',
+                value : postAdd
+            }
         })
     }
 
@@ -28,38 +33,29 @@ const Signup = () => {
         e.preventDefault();
         setIsPopupOpen(false);
     }
+    //우편번호 관리 끝
+    
 
-    const [ userData, setUserData ] = useState({
-        name: "",
-        phone: "",
-        birth: "",
-        gender: "",
-        addr1: "",
-        addr2: "",
-    })
-    const onChange = (e) => {
-        const { name, value } = e.target;
-        setUserData({
-            ...userData,
-            [name]: value,
-        })
-    }
-
-    const onSubmit = (e) => {
+    const onSubmitch = (e) => {
         e.preventDefault();
-        if(userData.name !== "" && userData.phone !== "" && userData.birth !== "" && userData.gender !== "" && userData.addr1 !== ""){
-            insertCustomer();
+        if(createUser.name !== "" && createUser.phone !== "" && createUser.birth !== "" && createUser.gender !== "" && createUser.addr1 !== ""){
+            onSubmit();
+            onHome();
         }
     }
-    function insertCustomer(){
-        axios.post(`http://localhost:3001/createMem`, userData)
-        .then((result)=>{
-            console.log(result);
-            alert('회원가입이 완료되었습니다.');
-            navigate("/");
-        })
-        .catch(e=>console.log(e))
-    }
+
+
+    const [isOn, setIsOn] = useState(null);
+    
+    useEffect(()=>{
+        setIsOn(true);
+        if(isOn===true){
+            const footer = document.querySelector('footer');
+            footer.style.bottom = -86 + '%';
+        }
+    },[isOn])
+
+
     return (
         <div id="res">
             <div id="res-top">
@@ -69,7 +65,7 @@ const Signup = () => {
             <div id="res-confirm">
                 <h2>회원 정보 입력</h2>
                 <div id="mWrap" className="loginBox">
-                    <form  onSubmit={onSubmit}>
+                    <form  onSubmit={onSubmitch}>
                         <ul>
                             <li>
                                 <div className="textBox">
@@ -80,7 +76,7 @@ const Signup = () => {
                                 <div className="textBox">
                                     <p>＊ 이름</p>
                                     <p>
-                                        <input name="name" type="text" placeholder="아이디를 입력해주세요." value={userData.name} onChange={onChange}/>
+                                        <input name="name" type="text" placeholder="아이디를 입력해주세요." value={createUser.name} onChange={onChange}/>
                                     </p>
                                 </div>
                             </li>
@@ -88,7 +84,7 @@ const Signup = () => {
                                 <div className="textBox" >
                                     <p>＊ 전화번호</p>
                                     <p>
-                                        <input name="phone" type="text" placeholder="연락처를 입력해주세요." value={userData.phone} onChange={onChange}/>
+                                        <input name="phone" type="text" placeholder="연락처를 입력해주세요." value={createUser.phone} onChange={onChange}/>
                                     </p>
                                 </div>
                             </li>
@@ -96,7 +92,7 @@ const Signup = () => {
                                 <div className="textBox">
                                     <p>＊ 생년월일</p>
                                     <p>
-                                        <input name="birth" type="text" placeholder="생년월일을 입력해주세요." value={userData.birth} onChange={onChange}/>
+                                        <input name="birth" type="text" placeholder="생년월일을 입력해주세요." value={createUser.birth} onChange={onChange}/>
                                     </p>
                                 </div>
                             </li>
@@ -113,8 +109,8 @@ const Signup = () => {
                                 <div className="textBox">
                                     <p>＊ 주소 <button className="inputButton" onClick={openPostCode}>주소 찾기</button></p>
                                     <p>
-                                        <input type="text" placeholder="주소를 입력하거나 찾으세요." name="addr1" value={userData.addr1} onChange={onChange}/>
-                                        <input type="text" placeholder="상세 주소를 입력하세요." name="addr2" value={userData.addr2} onChange={onChange}/>
+                                        <input type="text" placeholder="주소를 입력하거나 찾으세요." name="addr1" value={createUser.addr1} onChange={onChange}/>
+                                        <input type="text" placeholder="상세 주소를 입력하세요." name="addr2" value={createUser.addr2} onChange={onChange}/>
                                     </p>
                                     <div id="popupDom">
                                     {isPopupOpen && (
@@ -132,6 +128,7 @@ const Signup = () => {
                     </form>
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 };
