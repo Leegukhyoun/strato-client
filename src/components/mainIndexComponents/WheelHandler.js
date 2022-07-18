@@ -4,8 +4,6 @@ import Dots from "./Dots";
 import MainIndex from "./MainIndex";
 
 const Index = () => {
- 
- 
   const outerDivRef = useRef();
   const [scrollIndex, setScrollIndex] = useState(1);
   const [isOn, setIsOn] = useState(false);
@@ -142,7 +140,7 @@ const Index = () => {
           setScrollIndex(6);
         }
       }
-      if (scrollTop === pageHeight * 5 && deltaY > 0) {
+      if (scrollTop + pageHeight >= outerDivRef.current.scrollHeight && deltaY > 0) {
         const footer = document.querySelector('footer');
         footer.style.bottom = 0;
         console.log(deltaY)
@@ -167,14 +165,11 @@ const Index = () => {
     };
 
   }, [isOn]);
-
-
-
   return (
     <>
-      <section ref={outerDivRef} className="outer">
+      <section ref={outerDivRef} className="outer scrollEnd">
         <Dots scrollIndex={scrollIndex} />
-        <MainIndex />
+        <MainIndex isOn={isOn}/>
       </section>
     </>
   );
