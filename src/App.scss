@@ -668,7 +668,7 @@ img{
     height: 400px;
     background: #222;
     position: absolute;
-    z-index: 30;
+    z-index: 300;
     left: 0;
     bottom: -50%;
     transition: 0.5s;
@@ -772,6 +772,7 @@ img{
 }
 #reservation{
   position: relative;
+  overflow-y: scroll;
 }
 #blackBg{
   position: absolute;
@@ -996,6 +997,7 @@ img{
                 transform: translate(-50%,-50%);
                 text-align: center;
                 color: #fff;
+                text-shadow: 3px 3px 2px #000;
                 p {
                   font-size: 21px;
                   span {

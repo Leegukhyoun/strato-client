@@ -1,7 +1,17 @@
-import React from 'react';
+import React, {useState,useEffect} from 'react';
+import Footer from '../Include/Footer';
 
 
 const RoomsDetail = () => {
+    const [isOn, setIsOn] = useState(null);
+    
+    useEffect(()=>{
+        setIsOn(true);
+        if(isOn===true){
+            const footer = document.querySelector('footer');
+            footer.style.bottom = -100 + '%';
+        }
+    },[isOn])
     return (
         <>
             <div className='roomDetailWrap'>
@@ -156,6 +166,7 @@ const RoomsDetail = () => {
                         </li>
                     </ul>
                 </div>
+                <Footer/>
             </div>
         </>
     );

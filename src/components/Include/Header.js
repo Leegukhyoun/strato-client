@@ -80,6 +80,7 @@ const Header = () => {
         sessionStorage.clear();
     }
 
+    
     return (
         <>
             <header>
@@ -87,7 +88,7 @@ const Header = () => {
                 <ul>
                     <li>EN</li>
                     <li><Link to="/reservation">Reservation</Link></li>
-                        {isLoged ? <li onClick={LogoutFunc}>Logout</li> : <li><Link to="/login">Login</Link></li>}
+                        {isLoged ? <li onClick={LogoutFunc}>Logout</li> : <li><Link to="/reservation">Login</Link></li>}
                     <li id="toggle" onClick={toggleBtn}>
                         <ToggleSpan className='toggles' isOn={isOn} />
                         <ToggleSpan className='toggles' isOn={isOn} />
