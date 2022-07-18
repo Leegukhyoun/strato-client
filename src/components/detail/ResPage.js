@@ -4,34 +4,50 @@ import { useNavigate } from 'react-router-dom';
 
 const ResPage = () => {
     const navigate = useNavigate();
-
-    const [ userData, setUserData ] = useState({
+    const [ user, setUser ] = useState({
         name: "",
         birth: "",
-    })
+    });
+
     const onChange = (e) => {
         const { name, value } = e.target;
-        setUserData({
-            ...userData,
+        setUser({
+            ...user,
             [name]: value,
         })
     }
 
     const onSubmit = (e) => {
         e.preventDefault();
-        if(userData.name !== "" && userData.birth !== ""){
+        if(user.name !== "" && user.birth !== ""){
             insertCustomer();
+            setUser({
+                name: "",
+                birth: ""
+            })
         }
     }
 
     function insertCustomer(){
-        axios.post(`http://localhost:3001/userlogin`, userData)
-        .then((result)=>{
-            console.log(result);
+        axios.post(`http://localhost:3001/userlogin`, user)
+        .then( res =>{
+            const data = res.data;
+            console.log(data)
+            if(data === 'id is undefined') return alert('id가 올바르지 않습니다.');
+            if(data === 'pw is undefined') return alert('password가 올바르지 않습니다.');
+            if(data === 'login successed'){
+                alert('login 성공!');
+                sessionStorage.setItem('name', user.name);
+            };
             navigate("/");
         })
         .catch(e=>console.log(e))
     }
+
+    
+
+
+
 
     return (
         <div id="res">
@@ -47,10 +63,10 @@ const ResPage = () => {
                         <p>
                         로그인 하시면 회원님의 예약현황을 확인하실 수 있습니다.
                         </p>
-                        <form className="login" onSubmit={onSubmit}>
+                        <form className="login" onSubmit={onSubmit} >
                             <div className="lWrap">
-                                <input name="name" type="text" placeholder="이름" onChange={onChange}/>
-                                <input name="birth" type="password" placeholder="생년월일" onChange={onChange}/>
+                                <input name="name" type="text" placeholder="이름" onChange={onChange} value={user.name}/>
+                                <input name="birth" type="password" placeholder="생년월일" onChange={onChange} value={user.birth}/>
                             </div>
                             <button type='submit'>로그인</button>
                         </form>
