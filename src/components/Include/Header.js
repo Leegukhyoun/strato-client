@@ -72,15 +72,15 @@ const Header = () => {
 
     function toggleBtn(){
         setIsOn(!isOn);
-
     }
+
     return (
         <>
             <header>
             <h1><Link to="/">Strato</Link></h1>
             <ul>
                 <li>EN</li>
-                <li><Link to ="/reservation">Reservation</Link></li>
+                <li>{sessionStorage.getItem("login") ? "LOGOUT" : <Link to ="/reservation">Reservation</Link>}</li>
                 <li><Link to="/login">Login</Link></li>
                 <li id="toggle" onClick={toggleBtn}>
                     <ToggleSpan className='toggles' isOn={isOn}/>

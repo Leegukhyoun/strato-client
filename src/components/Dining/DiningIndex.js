@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 import { Carousel } from 'antd';
 import "antd/dist/antd.css";
+import Footer from '../Include/Footer';
+
+
+
 const contentStyle = {
     height: '80vh',
     width: '70vw',
@@ -11,6 +15,17 @@ const contentStyle = {
   };
 
 const DiningIndex = () => {
+    const [isOn, setIsOn] = useState(null);
+    
+    useEffect(()=>{
+        setIsOn(true);
+        if(isOn===true){
+            const footer = document.querySelector('footer');
+            footer.style.bottom = -330 + '%';
+        }
+    },[isOn])
+    
+
     return (
         <>
         <div id='diningIndex'>
@@ -26,7 +41,7 @@ const DiningIndex = () => {
                     <h2>운영 시간</h2>
                     <table>
                         <tr>
-                            <td rowspan="3">WEEKDAY / WEEKEND</td>
+                            <td rowSpan="3">WEEKDAY / WEEKEND</td>
                             <td>BREAKFAST</td>
                             <td>06:30 ~ 10:00</td>
                         </tr>
@@ -98,7 +113,9 @@ const DiningIndex = () => {
                     <p>▶ 문의, 예약 T.052-456-1234 / 1235 | E-MAIL. Piccolo@strato.co.kr</p>
                 </div>
             </div>
+            <Footer/>
         </div>
+        
         </>
 
     );
