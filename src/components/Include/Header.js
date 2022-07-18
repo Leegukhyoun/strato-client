@@ -1,4 +1,4 @@
-import React,{ useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components'
 import { Link } from 'react-router-dom';
 
@@ -11,13 +11,13 @@ height: 100vh;
 background-color: #000741;
 z-index: 22;
 transition: 0.5s;
-${props=>
-    props.isOn &&
-    css`
+${props =>
+        props.isOn &&
+        css`
         right: 0;
     `
 
-}
+    }
 `
 const ToggleSpan = styled.span`
 background: #fff;
@@ -27,9 +27,9 @@ transition: 0.5s;
 &:not(:last-child){
     margin-bottom: 4px;
 }
-${props=>
-    props.isOn &&
-    css `
+${props =>
+        props.isOn &&
+        css`
         &:nth-child(1){
             transform: rotate(45deg);
             position : absolute;
@@ -44,7 +44,7 @@ ${props=>
             position : absolute;
         }
     `
-}
+    }
 `
 
 const BlackBg = styled.div`
@@ -57,49 +57,55 @@ width:100vw;
 height:100vh;
 transition: 0.5s;
 z-index : 21;
-${props=>
-props.isOn &&
-css `
+${props =>
+        props.isOn &&
+        css`
     display : block;
 `
-}
+    }
 `
 
 
 
 const Header = () => {
-    const [ isOn, setIsOn ] = useState(false);
-
-    function toggleBtn(){
+    const [isOn, setIsOn] = useState(false);
+    const [isLoged, setIsLoged] = useState(null);
+    useEffect(()=>{
+        setIsLoged(sessionStorage.getItem('name'));
+    },[isLoged])
+    function toggleBtn() {
         setIsOn(!isOn);
+    }
+    const LogoutFunc = () =>{
+        sessionStorage.clear();
     }
 
     return (
         <>
             <header>
-            <h1><Link to="/">Strato</Link></h1>
-            <ul>
-                <li>EN</li>
-                <li>{sessionStorage.getItem("login") ? "LOGOUT" : <Link to ="/reservation">Reservation</Link>}</li>
-                <li><Link to="/login">Login</Link></li>
-                <li id="toggle" onClick={toggleBtn}>
-                    <ToggleSpan className='toggles' isOn={isOn}/>
-                    <ToggleSpan className='toggles' isOn={isOn}/>
-                    <ToggleSpan className='toggles' isOn={isOn}/>
-                </li>
-            </ul>
+                <h1><Link to="/">Strato</Link></h1>
+                <ul>
+                    <li>EN</li>
+                    <li><Link to="/reservation">Reservation</Link></li>
+                        {isLoged ? <li onClick={LogoutFunc}>Logout</li> : <li><Link to="/login">Login</Link></li>}
+                    <li id="toggle" onClick={toggleBtn}>
+                        <ToggleSpan className='toggles' isOn={isOn} />
+                        <ToggleSpan className='toggles' isOn={isOn} />
+                        <ToggleSpan className='toggles' isOn={isOn} />
+                    </li>
+                </ul>
             </header>
-            <BlackBg isOn={isOn}  onClick={toggleBtn}/>
+            <BlackBg isOn={isOn} onClick={toggleBtn} />
             <ToggleBg isOn={isOn}>
                 <ul id='subMenu'>
-                    <li><Link to ="/reservation" onClick={toggleBtn}>Reservation</Link></li>
+                    <li><Link to="/reservation" onClick={toggleBtn}>Reservation</Link></li>
                     <li><Link to="/aboutus" onClick={toggleBtn}>About Us</Link></li>
-                    <li><Link to="/rooms"  onClick={toggleBtn}>Rooms</Link></li>
+                    <li><Link to="/rooms" onClick={toggleBtn}>Rooms</Link></li>
                     <li><Link to="/dining" onClick={toggleBtn}>Dining</Link></li>
                     <li><Link to="/membership" onClick={toggleBtn}>Sign-Up</Link></li>
                 </ul>
             </ToggleBg>
-        </>  
+        </>
     );
 };
 

@@ -4,8 +4,6 @@ import Dots from "./Dots";
 import MainIndex from "./MainIndex";
 
 const Index = () => {
- 
- 
   const outerDivRef = useRef();
   const [scrollIndex, setScrollIndex] = useState(1);
   const [isOn, setIsOn] = useState(false);
@@ -15,6 +13,8 @@ const Index = () => {
       const { deltaY } = e;
       const { scrollTop } = outerDivRef.current; // 스크롤 위쪽 끝부분 위치
       const pageHeight = window.innerHeight; // 화면 세로길이, 100vh와 같습니다.
+      const scrollEnd = document.querySelector('.scrollEnd');
+      console(scrollEnd.scrollHeight);
       console.log(scrollTop, "want");
       if (deltaY > 0) {
         // 스크롤 내릴 때
@@ -142,7 +142,7 @@ const Index = () => {
           setScrollIndex(6);
         }
       }
-      if (scrollTop === pageHeight * 5 && deltaY > 0) {
+      if (scrollTop + pageHeight >= outerDivRef.current.scrollHeight && deltaY > 0) {
         const footer = document.querySelector('footer');
         footer.style.bottom = 0;
         console.log(deltaY)
@@ -167,14 +167,11 @@ const Index = () => {
     };
 
   }, [isOn]);
-
-
-
   return (
     <>
-      <section ref={outerDivRef} className="outer">
+      <section ref={outerDivRef} className="outer scrollEnd">
         <Dots scrollIndex={scrollIndex} />
-        <MainIndex />
+        <MainIndex isOn={isOn}/>
       </section>
     </>
   );
