@@ -773,6 +773,7 @@ img{
 #reservation{
   position: relative;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 #blackBg{
   position: absolute;
@@ -1029,3 +1030,50 @@ img{
         }
     }
     //aboutus end
+
+    //rescheck
+
+    #res-check{
+      height: 700px;
+      .titleRes{
+        font-size: 20px;
+      }
+      .reserListWrap{
+        li{
+          font-size: 13px;
+          span{
+            font-size: 18px;
+          }
+        }
+        ul{
+          > li{
+            padding: 7px 0;
+          }
+        }
+        > li{
+          text-align: center;
+          &:nth-child(2){
+            text-align: left;
+          }
+        }
+      }
+      > ul{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #ccc;
+        align-items: center;
+        > li{
+          text-align: center;
+          width: 33.3333%;
+          padding-bottom: 20px;
+          img{
+            height: auto;
+            width: 300px;
+          }
+        }
+      }
+    }
+
+
+    //rescheck
