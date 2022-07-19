@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components'
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { setLogout } from '../../module/signup';
 
 const ToggleBg = styled.div`
 position: fixed;
@@ -68,27 +70,34 @@ ${props =>
 
 
 const Header = () => {
+    const loginUser = useSelector(state=>state.users.loginUser);
+    const dispatch = useDispatch();
     const [isOn, setIsOn] = useState(false);
-    const [isLoged, setIsLoged] = useState(null);
-    useEffect(()=>{
-        setIsLoged(sessionStorage.getItem('name'));
-    },[isLoged])
     function toggleBtn() {
         setIsOn(!isOn);
     }
     const LogoutFunc = () =>{
         sessionStorage.clear();
+        alert('로그아웃 되었습니다.')
+        dispatch(setLogout());
     }
 
-    
+    // useEffect(()=>{
+        
+    // },[loginUser])
     return (
         <>
             <header>
                 <h1><Link to="/">Strato</Link></h1>
                 <ul>
                     <li>EN</li>
-                    <li><Link to="/reservation">Reservation</Link></li>
-                        {isLoged ? <li onClick={LogoutFunc}>Logout</li> : <li><Link to="/reservation">Login</Link></li>}
+                    {/* <li><Link to="/reservation">Reservation</Link></li> */}
+                        {sessionStorage.getItem('name') 
+                        ? <li><Link to="/rescheck">Reservation</Link></li> 
+                        : <li><Link to="/reservation">Reservation</Link></li>}
+                        {sessionStorage.getItem('name')
+                        ? <li onClick={LogoutFunc}>Logout</li> 
+                        : <li><Link to="/reservation">Login</Link></li>}
                     <li id="toggle" onClick={toggleBtn}>
                         <ToggleSpan className='toggles' isOn={isOn} />
                         <ToggleSpan className='toggles' isOn={isOn} />

@@ -1,4 +1,5 @@
 import { combineReducers } from "redux";
 import users from "./signup";
-const rootReducer = combineReducers({ users });
+import res from "./reservation";
+const rootReducer = combineReducers({ users, res });
 export default rootReducer;
