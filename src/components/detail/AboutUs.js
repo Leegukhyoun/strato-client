@@ -1,6 +1,17 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import Footer from '../Include/Footer';
 
 const AboutUs = () => {
+    const [isOn, setIsOn] = useState(null);
+    
+    useEffect(()=>{
+        setIsOn(true);
+        if(isOn===true){
+            const footer = document.querySelector('footer');
+            footer.style.bottom = -170 + '%';
+        }
+    },[isOn])
+
     return (
         <div id="brandS">
             <div id="brandS-top">
@@ -50,6 +61,7 @@ const AboutUs = () => {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 };

@@ -1,50 +1,29 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../Include/Footer';
 
-const ResPage = () => {
-    const navigate = useNavigate();
-    const [ user, setUser ] = useState({
-        name: "",
-        birth: "",
-    });
+const ResPage = ({onHome, onChange, onSubmit, loginUser}) => {
 
-    const onChange = (e) => {
-        const { name, value } = e.target;
-        setUser({
-            ...user,
-            [name]: value,
-        })
-    }
 
-    const onSubmit = (e) => {
+    const onSubmitch = (e) => {
         e.preventDefault();
-        if(user.name !== "" && user.birth !== ""){
-            insertCustomer();
-            setUser({
-                name: "",
-                birth: ""
-            })
+        if(loginUser.name !== "" && loginUser.birth !== ""){
+            onSubmit();
+            onHome();
         }
     }
 
-    function insertCustomer(){
-        axios.post(`http://localhost:3001/userlogin`, user)
-        .then( res =>{
-            const data = res.data;
-            console.log(data)
-            if(data === 'id is undefined') return alert('id가 올바르지 않습니다.');
-            if(data === 'pw is undefined') return alert('password가 올바르지 않습니다.');
-            if(data === 'login successed'){
-                alert('login 성공!');
-                sessionStorage.setItem('name', user.name);
-            };
-            navigate("/");
-        })
-        .catch(e=>console.log(e))
-    }
 
+    const [isOn, setIsOn] = useState(null);
     
+    useEffect(()=>{
+        setIsOn(true);
+        if(isOn===true){
+            const footer = document.querySelector('footer');
+            footer.style.bottom = -50 + '%';
+        }
+    },[isOn])
 
 
 
@@ -63,10 +42,10 @@ const ResPage = () => {
                         <p>
                         로그인 하시면 회원님의 예약현황을 확인하실 수 있습니다.
                         </p>
-                        <form className="login" onSubmit={onSubmit} >
+                        <form className="login" onSubmit={onSubmitch} >
                             <div className="lWrap">
-                                <input name="name" type="text" placeholder="이름" onChange={onChange} value={user.name}/>
-                                <input name="birth" type="password" placeholder="생년월일" onChange={onChange} value={user.birth}/>
+                                <input name="name" type="text" placeholder="이름" onChange={onChange} value={loginUser.name}/>
+                                <input name="phone" type="password" placeholder="전화번호" onChange={onChange} value={loginUser.phone}/>
                             </div>
                             <button type='submit'>로그인</button>
                         </form>
@@ -86,6 +65,7 @@ const ResPage = () => {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 };
