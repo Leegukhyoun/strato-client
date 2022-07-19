@@ -10,6 +10,7 @@ import RoomsDetail from "./components/detail/RoomsDetail";
 import TopBtn from "./components/mainIndexComponents/TopBtn";
 import SignUpContainer from "./components/Container/SignUpContainer";
 import LoginContainer from "./components/Container/LoginContainer";
+import ResCheckContainer from "./components/Container/ResCheckContainer";
 
 
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/rooms" element={<RoomsDetail />} />
         <Route path="/dining" element={<DiningIndex/>} />
         <Route path="/membership" element={<SignUpContainer/>} />
+        <Route path="/rescheck" element={<ResCheckContainer/>} />
       </Routes>
       <TopBtn/>
       <Footer/>
