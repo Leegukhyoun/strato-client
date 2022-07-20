@@ -1,5 +1,5 @@
-import React,{useState, useEffect} from 'react';
-import Footer from '../Include/Footer';
+import React from 'react';
+
 
 const ResPage = ({onHome, onChange, onSubmit, loginUser}) => {
 
@@ -12,29 +12,14 @@ const ResPage = ({onHome, onChange, onSubmit, loginUser}) => {
         }
     }
 
-
-    const [isOn, setIsOn] = useState(null);
-    
-    useEffect(()=>{
-        setIsOn(true);
-        if(isOn===true){
-            const footer = document.querySelector('footer');
-            footer.style.bottom = -50 + '%';
-        }
-    },[isOn])
-
-
-
-
     return (
-        <div id="res">
-            <div id="res-top">
-                <img src='../images/dining_visual_05_2.png' alt=""/>
+        <div className="res">
+            <div className="res-top">
                 <h2>Reservation</h2>
             </div>
-            <div id="res-confirm">
+            <div className="res-confirm contentInner">
                 <h2>예약조회</h2>
-                <div id="mWrap">
+                <div className="mWrap contentInner">
                     <div className="member">
                         <h3>회원 로그인</h3>
                         <p>
@@ -63,7 +48,6 @@ const ResPage = ({onHome, onChange, onSubmit, loginUser}) => {
                     </div>
                 </div>
             </div>
-            <Footer/>
         </div>
     );
 };

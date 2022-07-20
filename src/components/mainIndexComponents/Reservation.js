@@ -19,7 +19,6 @@ const Reservation = ({addRoom, onSubmit, onClick, onChangech1, onChangech2, onSe
                     <div id='cal'  style={{display:CalState ? 'block' : 'none'}}>
                         <div className="site-calendar-demo-card">
                         <Calendar fullscreen={false} onPanelChange={onPanelChange} onChange={onChangech1}/>
-                        {/* <input type="hidden" name='cal1' value={addRoom.checkin}/> */}
                         </div>
                     </div>
                     <div id='cal2'  style={{display:CalState ? 'block' : 'none'}}>

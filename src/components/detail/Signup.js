@@ -1,9 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import PopupPostCode from './AddressSearch/PopupPostCode';
 import PopupDom from './AddressSearch/PopupDom';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import Footer from '../Include/Footer';
 
 const Signup = ({onChange, onHome, onSubmit, createUser}) => {
     console.log(onChange, createUser)
@@ -45,26 +42,17 @@ const Signup = ({onChange, onHome, onSubmit, createUser}) => {
     }
 
 
-    const [isOn, setIsOn] = useState(null);
-    
-    useEffect(()=>{
-        setIsOn(true);
-        if(isOn===true){
-            const footer = document.querySelector('footer');
-            footer.style.bottom = -86 + '%';
-        }
-    },[isOn])
 
 
     return (
-        <div id="res">
-            <div id="res-top">
+        <div className="res">
+            <div className="res-top">
                 <img src='../images/dining_visual_05_2.png' alt=""/>
                 <h2>Strato 멤버십 가입</h2>
             </div>
-            <div id="res-confirm">
+            <div className="res-confirm">
                 <h2>회원 정보 입력</h2>
-                <div id="mWrap" className="loginBox">
+                <div className="mWrap loginBox contentInner">
                     <form  onSubmit={onSubmitch}>
                         <ul>
                             <li>
@@ -128,7 +116,6 @@ const Signup = ({onChange, onHome, onSubmit, createUser}) => {
                     </form>
                 </div>
             </div>
-            <Footer/>
         </div>
     );
 };

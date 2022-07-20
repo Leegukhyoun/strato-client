@@ -87,7 +87,7 @@ const Header = () => {
     return (
         <>
             <header>
-                <h1 onClick={isOn ? toggleBtn : ""}><Link to="/">Strato</Link></h1>
+                <h1 onClick={isOn ? toggleBtn : null}><Link to="/">Strato</Link></h1>
                 <ul>
                     <li>
                         EN

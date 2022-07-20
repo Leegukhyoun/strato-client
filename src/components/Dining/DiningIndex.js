@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Carousel } from 'antd';
 import "antd/dist/antd.css";
-import Footer from '../Include/Footer';
 
 
 
@@ -12,32 +11,20 @@ const contentStyle = {
     lineHeight: '80vh',
     textAlign: 'center',
     background: '#364d79',
-  };
+};
 
 const DiningIndex = () => {
-    const [isOn, setIsOn] = useState(null);
-    
-    useEffect(()=>{
-        setIsOn(true);
-        if(isOn===true){
-            const footer = document.querySelector('footer');
-            footer.style.bottom = -330 + '%';
-        }
-    },[isOn])
-    
-
     return (
         <>
-        <div id='diningIndex'>
-            <div id='diningBg'>
-                DINING
-            </div>
-            <div id='diningCon'>
-                <div>
+            <div id='diningIndex'>
+                <div className="dinDetailTitle">
+                    <h2>DINING</h2>
+                </div>
+                <div className='diningCon contentInner'>
                     <h2>다이내믹 키친 뷔페 레스토랑</h2>
-                    <p>세계 각국의 트렌디한 메뉴를 테마별로 선보이는 뷔페레스토랑으로<br/>
-                    라이브 스테이션에서 최상의 퀄리티로 제공되는 즉석 메뉴, 호텔 직영 농장 식재료를 사용한 건강식 등 다채로운 셀렉션이 준비되어 있습니다.<br/>
-                    하지만 운영은 하지 않으니 배달 시켜 드시길 바랍니다.</p>
+                    <p>세계 각국의 트렌디한 메뉴를 테마별로 선보이는 뷔페레스토랑으로<br />
+                        라이브 스테이션에서 최상의 퀄리티로 제공되는 즉석 메뉴, 호텔 직영 농장 식재료를 사용한 건강식 등 다채로운 셀렉션이 준비되어 있습니다.<br />
+                        하지만 운영은 하지 않으니 배달 시켜 드시길 바랍니다.</p>
                     <h2>운영 시간</h2>
                     <table>
                         <tr>
@@ -84,24 +71,24 @@ const DiningIndex = () => {
                     <h2>대표 메뉴</h2>
                     <Carousel effect="fade" autoplay dots={false}>
                         <div>
-                        <h3 style={contentStyle}>
-                            <img src="images/view_cont_info_slide_img03_1.png"/>
-                        </h3>
+                            <h3 style={contentStyle}>
+                                <img src="images/view_cont_info_slide_img03_1.png" alt="diningPic1" />
+                            </h3>
                         </div>
                         <div>
-                        <h3 style={contentStyle}>
-                            <img src="images/view_cont_info_slide_img03_2.png"/>
-                        </h3>
+                            <h3 style={contentStyle}>
+                                <img src="images/view_cont_info_slide_img03_2.png" alt="diningPic1" />
+                            </h3>
                         </div>
                         <div>
-                        <h3 style={contentStyle}>
-                            <img src="images/view_cont_info_slide_img03_3.png"/>
-                        </h3>
+                            <h3 style={contentStyle}>
+                                <img src="images/view_cont_info_slide_img03_3.png" alt="diningPic1" />
+                            </h3>
                         </div>
                         <div>
-                        <h3 style={contentStyle}>
-                            <img src="images/view_cont_info_slide_img03_4.png"/>
-                        </h3>
+                            <h3 style={contentStyle}>
+                                <img src="images/view_cont_info_slide_img03_4.png" alt="diningPic1" />
+                            </h3>
                         </div>
                     </Carousel>
                     <p className='gray'>※ 위 이미지는 예시 이미지로, 현실과는 많이 다릅니다. 그래도 그냥 드세요.</p>
@@ -113,9 +100,6 @@ const DiningIndex = () => {
                     <p>▶ 문의, 예약 T.052-456-1234 / 1235 | E-MAIL. Piccolo@strato.co.kr</p>
                 </div>
             </div>
-            <Footer/>
-        </div>
-        
         </>
 
     );

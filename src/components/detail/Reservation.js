@@ -1,24 +1,16 @@
-import React,{useState, useEffect} from 'react';
-import Footer from '../Include/Footer';
+import React from 'react';
 import ReserList from './ReserList';
 
 const CheckReservation = ({res}) => {
-    const [isOn, setIsOn] = useState(null);
-    
-    // useEffect(()=>{
-    //     setIsOn(true);
-    //     if(isOn===true){
-    //         const footer = document.querySelector('footer');
-    //         footer.style.bottom = -71 + '%';
-    //     }
-    // },[isOn])
+
+
     return (
-        <div id="res" className='outer'>
-            <div id="res-top">
+        <div className='outer res'>
+            <div className="res-top">
+            <h2>Reservation</h2>
                 <img src='../images/dining_visual_05_2.png' alt=""/>
-                <h2>Reservation</h2>
             </div>
-            <div id="res-confirm">
+            <div className="res-confirm">
                 <h2>예약조회</h2>
                 <div id='res-check'>
                 <ul id='innerRes' className='titleRes'>
@@ -37,7 +29,6 @@ const CheckReservation = ({res}) => {
                         )}
                 </div>
             </div>
-            {/* <Footer/> */}
         </div>
     );
 };
