@@ -4,6 +4,7 @@ import Facilities from './Facilities';
 import Rooms from './Rooms';
 import Dining from './Dining';
 import Activity from './Activity';
+import Empty from './Empty';
 import ReservationContainer from '../Container/ReservationContainer';
 
 const MainIndex = () => {
@@ -15,6 +16,7 @@ const MainIndex = () => {
             <Rooms/>
             <Dining/>
             <Activity/>
+            <Empty />
         </>
     );
 };

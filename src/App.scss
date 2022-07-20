@@ -6,8 +6,11 @@
 }
 @import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+
+//reset start
 *{
-    margin: 0;
+    margin: 0 0 0 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'SUIT-SemiBold';
@@ -16,6 +19,8 @@ body {
   font-size: 14px;
   line-height: 1.6;
   margin: 0;
+}
+body.scrollHide{
   overflow-y: hidden;
 }
 li{
@@ -24,6 +29,17 @@ li{
 a{
     text-decoration: none; color: inherit;
 }
+img{
+  vertical-align: top;
+  height: 100%;
+  width: 100%;
+}
+//reset end
+
+.App {
+  position: relative;
+}
+
 .contentInner{
   max-width: 1200px;
   width: 100%;
@@ -35,6 +51,7 @@ a{
   --main-color: #000741;
 }
 
+//header start
 header{
     position: fixed;
     top: 0;
@@ -83,11 +100,9 @@ header{
         }
     }
 }
-img{
-    vertical-align: top;
-    height: 100%;
-    width: 100%;
-}
+//header end
+
+//toggle menu start
 #subMenu{
     color: #fff;
     position: absolute;
@@ -113,16 +128,16 @@ img{
   width: 100vw;
   height: 100vh;
 }
+//toggle menu end
+
+//scrollEvent
   .outer {
     height: 100vh;
     overflow-y: auto;
   }
-  
-  //scrollEvent
   .outer::-webkit-scrollbar {
     display: none;
   }
-  
   .inner {
     height: 100vh;
     display: flex;
@@ -130,7 +145,13 @@ img{
     align-items: center;
     font-size: 100px;
   }
+  // .scrollHide {
+  //   overflow-y: hidden;
+  // }
+  //scrollEvent
 
+
+//reservetion bar start
   #resBar{
     position: relative;
     height: 100%;
@@ -178,6 +199,7 @@ img{
       }
     }
   }
+  //reservation ber end
 
   #cal{
     position: absolute;
@@ -264,6 +286,9 @@ img{
 }
 #activity{
   position: relative;
+  img{
+    height: 100vh;
+  }
 }
 #ActBg{
   position: absolute;
@@ -474,37 +499,22 @@ img{
   // facilities 끝
 
   //reservationP start
-  #res {
+  .res {
     position: relative;
-    overflow-y: scroll;
-    height: 100vh;
-    overflow-x: hidden;
-    #res-top {
+    .res-top {
       width: 100vw;
       height: 40vh;
       overflow: hidden;
       position: relative;
+      background: url('../public/images/dining_visual_05_2.png') center bottom/cover no-repeat;
       h2{
         font-size: 36px;
         text-align: center;
         color: #fff;
-        position: absolute;
-        top: 65%;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-      img {
-        width: 100%;
-        height: auto;
-        transform: translateY(-45%);
+        line-height: 40vh;
       }
     }
-    #res-confirm {
-      position: absolute;
-      left: 19%;
-      width: 100vw;
-      max-width: 1200px;
-      margin: 0 auto;
+    .res-confirm {
       display: flex;
       flex-direction: column;
       text-align: center;
@@ -513,15 +523,12 @@ img{
         padding: 50px;
         border-bottom: 3px solid #000741;
       }
-      #mWrap {
-        width: 100vw;
-        max-width: 1200px;
-        margin: 0 auto;
+      .mWrap {
         display: flex;
-        width: 100vw;
         justify-content: space-between;
         padding-bottom: 50px;
         border-bottom: 1px solid #000741;
+        margin-bottom: 70px;
         .member {
           width: 50vw;
           padding: 15px;
@@ -575,8 +582,6 @@ img{
   //roomDetail start
 
   .roomDetailWrap {
-    height: 100vh;
-    overflow-y: auto;
     .roomImg{
       position: relative;
       height: 100vh;
@@ -667,11 +672,7 @@ img{
     width: 100%;
     height: 400px;
     background: #222;
-    position: absolute;
-    z-index: 300;
-    left: 0;
-    bottom: -50%;
-    transition: 0.5s;
+    transition: 0.48s;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -715,8 +716,12 @@ img{
       color: inherit;
     }
   }
+  footer.positioning {
+    position: absolute;
+    bottom: -50%;
+    left: 0;
+  }
   //Footer end
-
 
   //activity
 #actText{
@@ -772,12 +777,10 @@ img{
 }
 #reservation{
   position: relative;
-  overflow-y: scroll;
-  overflow-x: hidden;
 }
 #blackBg{
   position: absolute;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
 }
@@ -787,37 +790,26 @@ img{
   //dining
   #diningIndex{
     position: relative;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    background: url('../public/images/dining_visual_03_1.png') center center / 100% no-repeat;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    .dinDetailTitle{
+      height: 100vh;
+    background: fixed url('../public/images/dining_visual_03_1.png') center center /cover no-repeat;
+      h2{
+        font-size: 70px;
+      line-height: 100vh;
+      text-align: center;
+      color: #fff;
+      }
+    }
   }
 
-  #diningBg{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    color: #fff;
-    font-size: 80px;
-    z-index: 3;
-    transform: translate(-50%,-50%);
-  }
-  #diningCon{
+  .diningCon{
+    position: relative;
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 70px;
     h2, p , tr, td{
       font-family: 'Pretendard';
     }
-    position: relative;
-    top: 100vh;
-    height: 300vh;
-    width: 100vw;
-    background: #fff;
-    z-index: 3;
-    padding-left: 300px;
-    font-size: 18px;
-    padding-top: 50px;
-    font-weight: normal;
     h2{
       font-weight: bold;
       margin-top: 90px;
@@ -869,7 +861,8 @@ img{
           button{
             border: none;
             transition: 0.5s;
-            padding: 4px 9px;
+            width: 130px;
+            height: 40px;
             margin-left: 15px;
             color: #aaa;
             cursor: pointer;
@@ -924,22 +917,17 @@ img{
     //aboutus start
     #brandS {
       position: relative;
-      overflow-y: scroll;
-      overflow-x: hidden;
-      height: 100vh;
       #brandS-top {
-        width: 100vw;
+        width: 100%;
         height: 40vh;
         background: #000741;
         overflow: hidden;
+        background: url('../public/images/aboutus2.jpg')center bottom/cover no-repeat;
         h2{
-          font-size: 36px;
+          font-size: 46px;
           text-align: center;
           color: #fff;
-          position: absolute;
-          top: 25%;
-          left: 50%;
-          transform: translateX(-50%);
+          line-height: 40vh;
         }
         img {
           width: 100%;
@@ -948,7 +936,6 @@ img{
         }
       }
       #aboutCon {
-        position: absolute;
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -978,19 +965,13 @@ img{
           }
           #brandS-m {
             position: relative;
-            width: 100vw;
+            width: 100%;
             padding: 100px 0;
-            padding-top: 30px;
-            max-width: 1200px;
-            margin: 0 auto; 
             display: flex;
             flex-direction: column;
             #bM {
-              position: absolute;
-              right: -30%;
-              width: 100vw;
-              // height: 100vh;
-              // background-color: #000741;
+              width: 100%;
+              position: relative;
               #brandS-b {
                 position: absolute;
                 top: 50%;
@@ -1008,11 +989,10 @@ img{
               }
             }
             #bT {
-              display: flex;    
-              position: relative;    
-              top: 980px; 
-              right: -70px;
-              padding-bottom: 100px;
+              display: flex;
+              justify-content: space-around;
+              position: relative;
+              padding: 100px 0;
                 h2 {
                   padding: 30px 0;
                   font-size: 28px;
@@ -1111,3 +1091,9 @@ img{
     }
 
     //resPopup
+
+    .empty{
+      background: #222;
+      width: 100%;
+      height: 400px;
+    }
