@@ -89,7 +89,9 @@ const Header = () => {
             <header>
                 <h1 onClick={isOn ? toggleBtn : ""}><Link to="/">Strato</Link></h1>
                 <ul>
-                    <li>EN</li>
+                    <li>
+                        EN
+                    </li>
                     {/* <li><Link to="/reservation">Reservation</Link></li> */}
                         {sessionStorage.getItem('name') 
                         ? <li><Link to="/rescheck">Reservation</Link></li> 

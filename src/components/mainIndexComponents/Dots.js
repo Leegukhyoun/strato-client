@@ -9,7 +9,7 @@ const Dot = ({ num, scrollIndex }) => {
           backgroundColor: scrollIndex === num ? "white" : "transparent",
           transition: "background-color 0.5s",
         }}
-      ></div>
+        ></div>
     );
   };
   
@@ -36,5 +36,6 @@ const Dot = ({ num, scrollIndex }) => {
       </div>
     );
   };
-  
+
+  ;
   export default Dots;

@@ -93,7 +93,7 @@ const ReservationBar = ({CalOn, onClick, addRoom, onSetRoom, onSubmit}) => {
                         <h2>룸 예약이 완료되었습니다.</h2>
                     </div>
                     <div>
-                        <button onClick={onMsg}>닫기</button>
+                        <button type='button' onClick={onMsg}>닫기</button>
                         <Link to="/rescheck"><button>예약 확인</button></Link>
                     </div>
                 </div>

@@ -9,12 +9,9 @@ const ResCheckContainer = () => {
     useEffect(()=>{
         dispatch(searchRes());
     },[dispatch])
-    console.log(data)
     if(loading) return <div>로딩중.</div>
     if(error) return <div>에러 발생</div>
     if(!data) return null;
-    console.log(data)
-
     return (
         <CheckReservation res={data}/>
     );

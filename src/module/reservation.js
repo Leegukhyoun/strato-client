@@ -27,7 +27,7 @@ const initialState = {
     },
     addRoom: {
         room: "STANDARD",
-        imgsrc: "",
+        imgsrc: "images/rooms/rooms_visual_1.png",
         checkin: moment().format('YYYY-MM-DD'),
         checkout: moment().format('YYYY-MM-DD'),
         adult: 0,

@@ -3,20 +3,15 @@ import Footer from '../Include/Footer';
 import ReserList from './ReserList';
 
 const CheckReservation = ({res}) => {
-
     const [isOn, setIsOn] = useState(null);
     
-    useEffect(()=>{
-        setIsOn(true);
-        if(isOn===true){
-            const footer = document.querySelector('footer');
-            footer.style.bottom = -50 + '%';
-        }
-    },[isOn])
-
-
-
-
+    // useEffect(()=>{
+    //     setIsOn(true);
+    //     if(isOn===true){
+    //         const footer = document.querySelector('footer');
+    //         footer.style.bottom = -71 + '%';
+    //     }
+    // },[isOn])
     return (
         <div id="res" className='outer'>
             <div id="res-top">
@@ -38,7 +33,7 @@ const CheckReservation = ({res}) => {
                     </li>
                 </ul>
                     {res.map(res=>
-                        <ReserList key={res.id} res={res}/>
+                        <ReserList res={res}/>
                         )}
                 </div>
             </div>

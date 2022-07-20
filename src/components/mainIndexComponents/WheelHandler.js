@@ -2,9 +2,12 @@ import React, { useState, useEffect, useRef } from "react";
 import "antd/dist/antd.css";
 import Dots from "./Dots";
 import MainIndex from "./MainIndex";
+import TopBtn from "./TopBtn";
 
 const Index = () => {
   const outerDivRef = useRef();
+  const TopRef = useRef();
+
   const [scrollIndex, setScrollIndex] = useState(1);
   const [isOn, setIsOn] = useState(false);
   useEffect(() => {
@@ -13,8 +16,7 @@ const Index = () => {
       const { deltaY } = e;
       const { scrollTop } = outerDivRef.current; // 스크롤 위쪽 끝부분 위치
       const pageHeight = window.innerHeight; // 화면 세로길이, 100vh와 같습니다.
-
-      console.log(scrollTop, "want");
+      
       if (deltaY > 0) {
         // 스크롤 내릴 때
         if (scrollTop >= 0 && scrollTop < pageHeight) {
@@ -65,8 +67,6 @@ const Index = () => {
         } else {
           // 현재 3페이지
           console.log("현재 6페이지, down");
-          console.log(scrollTop);
-          console.log(pageHeight)
           outerDivRef.current.scrollTo({
             top: pageHeight * 5,
             left: 0,
@@ -159,17 +159,41 @@ const Index = () => {
         setIsOn(false);
       }
     };
+    const OnBtn = () => {
+      outerDivRef.current.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+      setScrollIndex(1);
+    }
+
+
     const outerDivRefCurrent = outerDivRef.current;
+    const topRefBtn = TopRef.current;
+
     outerDivRefCurrent.addEventListener("wheel", wheelHandler);
+    topRefBtn.addEventListener("click", OnBtn);
     return () => {
       outerDivRefCurrent.removeEventListener("wheel", wheelHandler);
+      topRefBtn.removeEventListener("click", OnBtn);
     };
 
+    
   }, [isOn]);
+
+
   return (
     <>
       <section ref={outerDivRef} className="outer scrollEnd">
-        <Dots scrollIndex={scrollIndex} />
+
+
+
+        <Dots scrollIndex={scrollIndex}/>
+
+
+
+        <TopBtn scrollIndex={scrollIndex} TopRef={TopRef}/>
         <MainIndex isOn={isOn}/>
       </section>
     </>
