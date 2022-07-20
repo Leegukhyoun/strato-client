@@ -55,6 +55,7 @@ export const setSubmit = () => async (dispatch, getState) => {
     const formdata = getState().users.createUser;
     try{
         const response = await axios.post(`http://localhost:3001/createMem`, formdata)
+        alert('회원 가입에 성공하였습니다.')
         dispatch({ type: SET_SIGNUP_RESET})
     }
     catch(e) {

@@ -1,4 +1,5 @@
 import axios from "axios";
+import moment from "moment";
 
 
 // 리덕스 액션타입, 초깃갑, 액션 생성 함수, 리듀서
@@ -27,8 +28,8 @@ const initialState = {
     addRoom: {
         room: "STANDARD",
         imgsrc: "",
-        checkin: "",
-        checkout: "",
+        checkin: moment().format('YYYY-MM-DD'),
+        checkout: moment().format('YYYY-MM-DD'),
         adult: 0,
         kids: 0,
         name: "",
