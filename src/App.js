@@ -11,10 +11,15 @@ import TopBtn from "./components/mainIndexComponents/TopBtn";
 import SignUpContainer from "./components/Container/SignUpContainer";
 import LoginContainer from "./components/Container/LoginContainer";
 import ResCheckContainer from "./components/Container/ResCheckContainer";
+import { useEffect } from "react";
 
 
 
 function App() {
+  // useEffect(()=>{
+  //   const body = document.querySelector('body');
+  //   body.classList.remove('scrollHide');
+  // },[Index])
 
   return (
     <div className="App">
