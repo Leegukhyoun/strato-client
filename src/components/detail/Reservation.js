@@ -25,7 +25,7 @@ const CheckReservation = ({res}) => {
                     </li>
                 </ul>
                     {res.map(res=>
-                        <ReserList key={res.id} res={res}/>
+                        <ReserList res={res}/>
                         )}
                 </div>
             </div>

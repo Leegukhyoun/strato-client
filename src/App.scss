@@ -1054,7 +1054,17 @@ header{
         }
       }
     }
-
+    .cancleBtn{
+      background: #000;
+      color: #fff;
+      cursor: pointer;
+      width: 100px;
+      text-align: center;
+      transition: 0.5s;
+      &:hover{
+        background: var(--main-color);
+      }
+    }
 
     //rescheck
 
@@ -1071,6 +1081,19 @@ header{
       text-align: center;
       h2{
         font-size: 26px;
+      }
+      .resBtn{
+        width: 110px;
+        height: 40px;
+        margin-top: 80px;
+        border: none;
+        outline: none;
+        background: #000;
+        color: #fff;
+        cursor: pointer;
+        &:hover{
+          background: var(--main-color);
+        }
       }
       button{
         width: 110px;
@@ -1089,6 +1112,7 @@ header{
         }
       }
     }
+    //resPopup
 
     //resPopup
 

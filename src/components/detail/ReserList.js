@@ -1,8 +1,22 @@
 import React from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const ReserList = ({res}) => {
-    
+    const navigator = useNavigate();
+    function delRes(){
+        axios.delete(`http://localhost:3001/delres/${res.id}`)
+        .then((result)=>{
+            alert('예약을 취소했습니다.');
+            navigator("/");
+        })
+        .catch((e)=>{
+            console.log(e)
+        })
+    }
+
     return (
+        <>
         <ul className='reserListWrap'>
             <li>
                 <img src={res.imgsrc} alt='' />
@@ -12,7 +26,7 @@ const ReserList = ({res}) => {
                     <li>예약자명 : <span>{res.name}</span></li>
                     <li>Check In/Out : <span>{res.checkin}</span> ~ <span>{res.checkout}</span></li>
                     <li>Adult : <span>{res.adult}</span>   Kids : <span>{res.kids}</span></li>
-                    <li>예약 취소</li>
+                    <li onClick={delRes} className="cancleBtn">예약 취소</li>
                 </ul>
             </li>
             <li>
@@ -20,6 +34,8 @@ const ReserList = ({res}) => {
                 <p>입실/퇴실 : <span>15:00 / 11:00</span></p>
             </li>
         </ul>
+        </>
+        
     );
 };
 

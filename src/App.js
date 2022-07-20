@@ -7,7 +7,6 @@ import DiningIndex from "./components/Dining/DiningIndex";
 import ResPage from "./components/detail/ResPage";
 import AboutUs from "./components/detail/AboutUs";
 import RoomsDetail from "./components/detail/RoomsDetail";
-import TopBtn from "./components/mainIndexComponents/TopBtn";
 import SignUpContainer from "./components/Container/SignUpContainer";
 import LoginContainer from "./components/Container/LoginContainer";
 import ResCheckContainer from "./components/Container/ResCheckContainer";
@@ -34,7 +33,6 @@ function App() {
         <Route path="/membership" element={<SignUpContainer/>} />
         <Route path="/rescheck" element={<ResCheckContainer/>} />
       </Routes>
-      <TopBtn/>
       <Footer/>
     </div>
   );

@@ -1,18 +1,19 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {BsArrowUpCircleFill} from "react-icons/bs"
 
 
-const TopBtn = () => {
+const TopBtn = ({scrollIndex, TopRef}) => {
     return (
         <div style={{
             position: 'absolute',
             bottom: 5+'%',
             right: 5+'%',
             fontSize: 50+'px',
-            // color: scrollNow == 0 ? '#fff' : '#000',
+            color: scrollIndex === 3? '#000' : '#fff',
             transition: 0.5+'s',
             cursor: 'pointer',
-        }}>
+            zIndex: '100',
+        }} id="ToBtn" ref={TopRef}>
             <BsArrowUpCircleFill/>
         </div>
     );
