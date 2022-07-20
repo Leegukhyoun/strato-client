@@ -16,6 +16,8 @@ const Index = () => {
       const footer = document.querySelector('footer');
       body.classList.add('scrollHide');
       footer.classList.add('positioning');
+      // document.querySelector('.positioning').style.bottom = 0;
+      // document.querySelector('.positioning').style.bottom = -50+'%';
       return()=>{
         body.classList.remove('scrollHide');
         footer.classList.remove('positioning')
@@ -145,8 +147,7 @@ const Index = () => {
         const footer = document.querySelector('footer');
         const maxHeight = outerDivRef.current.scrollHeight;
         const footerPositioning = document.querySelector('.positioning');
-        if(scrollTop === pageHeight * 5){
-        }
+
         if (pageHeight + scrollTop + footer.offsetHeight >= maxHeight && deltaY > 0) {
           footerPositioning.style.bottom = 0;
           outerDivRef.current.scrollTo({
@@ -187,7 +188,7 @@ const Index = () => {
     };
 
     
-  }, [isOn]);
+  }, []);
 
   return (
     <>
