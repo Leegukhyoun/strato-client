@@ -47,12 +47,11 @@ const Signup = ({onChange, onHome, onSubmit, createUser}) => {
     return (
         <div className="res">
             <div className="res-top">
-                <img src='../images/dining_visual_05_2.png' alt=""/>
                 <h2>Strato 멤버십 가입</h2>
             </div>
-            <div className="res-confirm">
+            <div className="res-confirm contentInner">
                 <h2>회원 정보 입력</h2>
-                <div className="mWrap loginBox contentInner">
+                <div className="mWrap loginBox ">
                     <form  onSubmit={onSubmitch}>
                         <ul>
                             <li>

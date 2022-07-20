@@ -5,12 +5,12 @@ const CheckReservation = ({res}) => {
 
 
     return (
-        <div className='outer res'>
+        <div className='res'>
             <div className="res-top">
             <h2>Reservation</h2>
                 <img src='../images/dining_visual_05_2.png' alt=""/>
             </div>
-            <div className="res-confirm">
+            <div className="res-confirm contentInner">
                 <h2>예약조회</h2>
                 <div id='res-check'>
                 <ul id='innerRes' className='titleRes'>
