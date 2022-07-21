@@ -3,6 +3,8 @@ import styled, { css } from 'styled-components'
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setLogout } from '../../module/signup';
+import { setLogoututils } from '../../module/pageutils';
+import classname from 'classname';
 
 const ToggleBg = styled.div`
 position: fixed;
@@ -72,8 +74,7 @@ ${props =>
 const Header = () => {
     const navigate = useNavigate();    
     const loginUser = useSelector(state=>state.users.loginUser);
-    const scrollindex = useSelector(state=>state.res.res.scrollindex);
-    console.log(scrollindex);
+    const scrollindex = useSelector(state=>state.utils.utils.scrollindex);
     const dispatch = useDispatch();
     const [isOn, setIsOn] = useState(false);
     function toggleBtn() {
@@ -87,27 +88,27 @@ const Header = () => {
     }
     return (
         <>
-            <div className='headerWrap'>
+            <div className='headerWrap onColor'style={{background : isOn ? 'none' : ''}}>
                 {isOn === false && <header>
-                    <h1><Link to="/" style={{color : scrollindex === 3 ? '#000' : '#fff'}}>Strato</Link></h1>
+                    <h1><Link to="/" style={{color : scrollindex === 3 ? '#000' : '#fff'}}><span className='headerSpan' id='titleFont'>Strato</span></Link></h1>
                     <ul>
-                        <li>
-                            EN
+                        <li style={{color : scrollindex === 3 ? '#000' : '#fff'}}>
+                            <span className='headerSpan'>EN</span>
                         </li>
                         {/* <li><Link to="/reservation">Reservation</Link></li> */}
                         {sessionStorage.getItem('name')
-                            ? <li><Link to="/rescheck" style={{color : scrollindex === 3 ? '#000' : '#fff'}}>Reservation</Link></li>
-                            : <li><Link to="/reservation" style={{color : scrollindex === 3 ? '#000' : '#fff'}}>Reservation</Link></li>}
+                            ? <li><Link to="/rescheck" style={{color : scrollindex === 3 ? '#000' : '#fff'}}><span className='headerSpan'>Reservation</span></Link></li>
+                            : <li><Link to="/reservation" style={{color : scrollindex === 3 ? '#000' : '#fff'}}><span className='headerSpan'>Reservation</span></Link></li>}
                         {sessionStorage.getItem('name')
-                            ? <li onClick={LogoutFunc}>Logout</li>
-                            : <li><Link to="/reservation" style={{color : scrollindex === 3 ? '#000' : '#fff'}}>Login</Link></li>}
+                            ? <li onClick={LogoutFunc} style={{color : scrollindex === 3 ? '#000' : '#fff'}}><span className='headerSpan'>Logout</span></li>
+                            : <li><Link to="/reservation" style={{color : scrollindex === 3 ? '#000' : '#fff'}}><span className='headerSpan'>Login</span></Link></li>}
                     </ul>
                 </header>}
                 <div id="toggle" onClick={toggleBtn} className={isOn ? 'on' : ''}>
                     <div className='toggleWrap'>
-                        <ToggleSpan className='toggles' isOn={isOn} style={{color : scrollindex === 3 ? '#000' : '#fff'}}/>
-                        <ToggleSpan className='toggles' isOn={isOn} style={{color : scrollindex === 3 ? '#000' : '#fff'}}/>
-                        <ToggleSpan className='toggles' isOn={isOn} style={{color : scrollindex === 3 ? '#000' : '#fff'}}/>
+                        <ToggleSpan className='toggles toggleColor' isOn={isOn} style={{background : scrollindex === 3 ? '#000' : ''}}/>
+                        <ToggleSpan className='toggles toggleColor' isOn={isOn} style={{background : scrollindex === 3 ? '#000' : ''}}/>
+                        <ToggleSpan className='toggles toggleColor' isOn={isOn} style={{background : scrollindex === 3 ? '#000' : ''}}/>
                     </div>
 
                 </div>

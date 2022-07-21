@@ -4,6 +4,7 @@ import {AiFillPlusSquare} from "react-icons/ai"
 import {AiFillMinusSquare} from "react-icons/ai"
 import styled, { css } from 'styled-components'
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 
 
@@ -45,24 +46,16 @@ ${props =>
 
 
 
-const ReservationBar = ({CalOn, onClick, addRoom, onSetRoom, onSubmit}) => {
-    const [ nowLogin, setNowLogin ] = useState(sessionStorage.getItem('name'));
-    const [ isOn, SetIsOn ] = useState(false);
-    const onMsg = () => {
-        SetIsOn(!isOn);
+const ReservationBar = ({CalOn, onClick, addRoom, onSetRoom, onSubmit, onToggle, onCal}) => {
+    const loginCheck = useSelector(state=>state.utils.utils);
+
+    const eventRemove = (e)=>{
+        e.preventDefault();
     }
 
-    const logCheck = () => {
-        if(!addRoom.name){
-            console.log('아이디 없음')
-        } else {
-            onMsg()
-        }
-    }
-    
     return (
         <>
-        <form onSubmit={onSubmit}>
+        <form onSubmit={eventRemove}>
             <ul>
                 <li>
                     <select name="room" id="rooms" onChange={onSetRoom}>
@@ -74,7 +67,7 @@ const ReservationBar = ({CalOn, onClick, addRoom, onSetRoom, onSubmit}) => {
                 </li>
                 <li>
                     <span>CHECK IN / OUT</span>
-                    <span><span className='num'>{addRoom.checkin}</span> - <span className='num'>{addRoom.checkout}<BsFillCalendarFill className='calIcon'  onClick={CalOn}/></span></span>
+                    <span><span className='num'>{addRoom.checkin}</span> - <span className='num'>{addRoom.checkout}<BsFillCalendarFill className='calIcon'  onClick={()=>onCal(!loginCheck.resCalbox)}/></span></span>
                 </li>
                 <li>
                     <span id='RoomNum'><span className='num'>{addRoom.room}</span></span>
@@ -93,17 +86,17 @@ const ReservationBar = ({CalOn, onClick, addRoom, onSetRoom, onSubmit}) => {
                 </li>
             </ul>
             <div>
-                <button id='searchBtn' type='submit' onClick={onMsg}>Reservation</button>
+                <button id='searchBtn' type='submit' onClick={onSubmit}>Reservation</button>
             </div>
-            <BlackBg isOn={isOn} onClick={onMsg}/>
-            <ResPopup isOn={isOn}>
+            <BlackBg isOn={loginCheck.resMsgbox} onClick={onToggle}/>
+            <ResPopup isOn={loginCheck.resMsgbox}>
                 <div className="resPopup">
                     <div>
                         <h2>룸 예약이 완료되었습니다.</h2>
                     </div>
                     <div>
-                        <button type='button' onClick={onMsg}>닫기</button>
-                        <Link to="/rescheck"><button>예약 확인</button></Link>
+                        <button type='button' onClick={onToggle}>닫기</button>
+                        <Link to="/rescheck"><button onClick={onToggle}>예약 확인</button></Link>
                     </div>
                 </div>
             </ResPopup>

@@ -3,7 +3,7 @@ import ReserList from './ReserList';
 
 const CheckReservation = ({res}) => {
 
-
+    
     return (
         <div className='res'>
             <div className="res-top">
