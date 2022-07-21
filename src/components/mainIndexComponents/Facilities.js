@@ -3,14 +3,14 @@ import React from 'react';
 const Facilities = () => {
     return (
         <div id="facilities" className='height'>
-            <h1>Strato wellness</h1>
+            <h1>STRATO <span>WELLNESS</span></h1>
             <div id="f-img01">
                 <div className='facText'></div>
                 {/* images/wellness_01.png */}
                 <img src='images/wellness_06.png' alt='01' />
             </div>
             <div id="f-text">
-                <div>자연 속 몸과 마음의 건강을 유지하며 여유로운 휴식을 즐길 수 있습니다.</div>
+                <div>자연 속 몸과 마음의 건강을 유지하며 <br/>여유로운 휴식을 즐길 수 있습니다.</div>
             </div>
             <div id="f-img02">
                 <div className='facText'></div>

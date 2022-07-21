@@ -6,6 +6,7 @@ import styled, { css } from 'styled-components'
 import { Link } from 'react-router-dom';
 
 
+
 const ResPopup = styled.div`
 position: absolute;
 top:50%;
@@ -45,12 +46,20 @@ ${props =>
 
 
 const ReservationBar = ({CalOn, onClick, addRoom, onSetRoom, onSubmit}) => {
-
+    const [ nowLogin, setNowLogin ] = useState(sessionStorage.getItem('name'));
     const [ isOn, SetIsOn ] = useState(false);
     const onMsg = () => {
         SetIsOn(!isOn);
     }
 
+    const logCheck = () => {
+        if(!addRoom.name){
+            console.log('아이디 없음')
+        } else {
+            onMsg()
+        }
+    }
+    
     return (
         <>
         <form onSubmit={onSubmit}>
@@ -84,7 +93,7 @@ const ReservationBar = ({CalOn, onClick, addRoom, onSetRoom, onSubmit}) => {
                 </li>
             </ul>
             <div>
-                <button id='searchBtn' type='submit' onClick={onMsg} >Reservation</button>
+                <button id='searchBtn' type='submit' onClick={onMsg}>Reservation</button>
             </div>
             <BlackBg isOn={isOn} onClick={onMsg}/>
             <ResPopup isOn={isOn}>

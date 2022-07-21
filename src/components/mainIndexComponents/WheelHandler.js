@@ -3,14 +3,20 @@ import "antd/dist/antd.css";
 import Dots from "./Dots";
 import MainIndex from "./MainIndex";
 import TopBtn from "./TopBtn";
+import { useDispatch } from 'react-redux';
+import { setScroll } from "../../module/reservation";
+
 
 const Index = () => {
   const outerDivRef = useRef();
   const TopRef = useRef();
-
+  const dispatch = useDispatch();
   const [scrollIndex, setScrollIndex] = useState(1);
   const body = document.querySelector('body');
   body.classList.add('scrollHide');
+ 
+
+
 
   useEffect(()=>{
       const footer = document.querySelector('footer');
@@ -20,7 +26,8 @@ const Index = () => {
       // document.querySelector('.positioning').style.bottom = -50+'%';
       return()=>{
         body.classList.remove('scrollHide');
-        footer.classList.remove('positioning')
+        footer.classList.remove('positioning');
+        dispatch(setScroll(1));
       }
   },[])
   
@@ -35,6 +42,7 @@ const Index = () => {
         // 스크롤 내릴 때
         if (scrollTop >= 0 && scrollTop < pageHeight) {
           setScrollIndex(2);
+          dispatch(setScroll(2));
           //현재 1페이지
           outerDivRef.current.scrollTo({
             top: pageHeight,
@@ -44,6 +52,7 @@ const Index = () => {
         } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 2) {
           //현재 2페이지s
           setScrollIndex(3);
+          dispatch(setScroll(3));
           outerDivRef.current.scrollTo({
             top: pageHeight * 2,
             left: 0,
@@ -57,6 +66,7 @@ const Index = () => {
             behavior: "smooth",
           });
           setScrollIndex(4);
+          dispatch(setScroll(4));
         } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 4) {
           //현재 2페이지s
           outerDivRef.current.scrollTo({
@@ -65,6 +75,7 @@ const Index = () => {
             behavior: "smooth",
           });
           setScrollIndex(5);
+          dispatch(setScroll(5));
         } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 5) {
           //현재 2페이지s
           outerDivRef.current.scrollTo({
@@ -73,6 +84,7 @@ const Index = () => {
             behavior: "smooth",
           });
           setScrollIndex(6);
+          dispatch(setScroll(6));
         } else {
           // 현재 3페이지
           outerDivRef.current.scrollTo({
@@ -81,6 +93,7 @@ const Index = () => {
             behavior: "smooth",
           });
           setScrollIndex(6);
+          dispatch(setScroll(6));
         }
       } else {
         // 스크롤 올릴 때
@@ -92,6 +105,7 @@ const Index = () => {
             behavior: "smooth",
           });
           setScrollIndex(1);
+          dispatch(setScroll(1));
         } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 2) {
           //현재 2페이지
           outerDivRef.current.scrollTo({
@@ -100,6 +114,7 @@ const Index = () => {
             behavior: "smooth",
           });
           setScrollIndex(1);
+          dispatch(setScroll(1));
         } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 3) {
           //현재 2페이지
           outerDivRef.current.scrollTo({
@@ -108,6 +123,7 @@ const Index = () => {
             behavior: "smooth",
           });
           setScrollIndex(2);
+          dispatch(setScroll(2));
         } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 4) {
           //현재 2페이지
           outerDivRef.current.scrollTo({
@@ -116,6 +132,7 @@ const Index = () => {
             behavior: "smooth",
           });
           setScrollIndex(3);
+          dispatch(setScroll(3));
         } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 5) {
           //현재 2페이지
           outerDivRef.current.scrollTo({
@@ -124,6 +141,7 @@ const Index = () => {
             behavior: "smooth",
           });
           setScrollIndex(4);
+          dispatch(setScroll(4));
         } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 6) {
           //현재 2페이지
           outerDivRef.current.scrollTo({
@@ -132,6 +150,7 @@ const Index = () => {
             behavior: "smooth",
           });
           setScrollIndex(5);
+          dispatch(setScroll(5));
         } else {
           // 현재 마지막페이지
           outerDivRef.current.scrollTo({
@@ -140,6 +159,7 @@ const Index = () => {
             behavior: "smooth",
           });
           setScrollIndex(6);
+          dispatch(setScroll(6));
         }
       }
       console.log(deltaY)
@@ -156,6 +176,7 @@ const Index = () => {
             behavior: 'smooth',
           });
           setScrollIndex(6);
+          // dispatch(setScroll(6));
         } else if (deltaY < 0 && scrollTop === pageHeight * 5 + footer.offsetHeight) {
           footerPositioning.style.bottom = -50+'%';
           outerDivRef.current.scrollTo({
@@ -164,16 +185,20 @@ const Index = () => {
             behavior: 'smooth',
           });
           setScrollIndex(6);
+          // dispatch(setScroll(6));
         }
       }
     };
     const OnBtn = () => {
+      const footerPositioning = document.querySelector('.positioning');
       outerDivRef.current.scrollTo({
         top: 0,
         left: 0,
         behavior: "smooth",
       });
+      footerPositioning.style.bottom = -50+'%';
       setScrollIndex(1);
+      dispatch(setScroll(1));
     }
 
 

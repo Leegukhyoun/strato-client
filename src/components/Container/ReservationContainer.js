@@ -32,6 +32,10 @@ const ReservationContainer = () => {
     const onSubmit = (e) => {
         e.preventDefault();
         onSetName(sessionStorage.getItem('name'));
+        if(addRoom.name === null){
+            alert('로그인을 하고 예약을 해주세요.');
+            return
+        }
         dispatch(setSubmit());
     }
     return (

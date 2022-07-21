@@ -38,6 +38,7 @@ img{
 
 .App {
   position: relative;
+  overflow-y: hidden;
 }
 
 .contentInner{
@@ -64,29 +65,29 @@ header{
     padding: 0 70px;
     line-height: 10vh;
     z-index: 25;
-    color: #fff;
     transition-property: color;
     transition-duration: 0.5s;
     h1{
         a {
-          color: #fff;
+          font-family: 'Azonix';
+          font-weight: bold;
+          font-size: 34px;
           &:hover {
-            color: #fff;
           }
         }
     }
     ul{
         margin-bottom: 0em;
         display: flex;
+        transition: 0.5s;
         li{
             position: relative;
             font-family: 'NanumSquare';
             font-size: 17px;
             padding: 0 15px;
             a {
-              color: #fff;
+              font-family: 'NanumSquare';
               &:hover {
-                color: #fff;
               }
             }
             &:last-child{
@@ -402,13 +403,19 @@ header{
       width: 250px;
       text-align: center;
       position: absolute;
+      line-height: 60px;
       top: 20%;
       left: 50%;
       transform: translateX(-50%);
-      font-size: 60px;
+      font-size: 70px;
       font-weight: bold;
       color: #000741;
-      font-family: 'NanumSquare';
+      font-family: 'Y 너만을 비춤체','Azonix';
+      span{
+        font-family: 'NanumSquare','Azonix';
+        font-size: 30px;
+        padding-left: 20px;
+      }
     }
     #f-img01 {
       position: absolute;
@@ -428,14 +435,25 @@ header{
       position: absolute;
       top: 52%;
       left: 21%;
-      width: 260px;
-      height: 370px;
+      width: 370px;
+      height: 260px;
       padding: 30px;
-      font-size: 16px;
-      color: #fff;
-      background-color: #000741;
+      font-size: 18px;
+      transition: 0.5s;
+      box-shadow: 8px 8px 10px rgba(0,0,0,0.3);
+      border-radius: 2px;
+      color: #444;
+      background: url('../public/images/paper.png') center bottom/cover no-repeat;
+      z-index: 20;
       div {
-        width: 180px;
+        width: 300px;
+        line-height: 40px;
+        padding-top: 50px;
+        text-align: center;
+        font-family: 'EF_다이어리';
+      }
+      &:hover {
+        transform: translateY(-3%)
       }
     }
     #f-img02 {
@@ -447,7 +465,7 @@ header{
       height: 340px;
       background-color: #ccc;
       overflow: hidden;
-      box-shadow: 8px 8px 10px rgba(0,0,0,0.1);
+      box-shadow: 8px 8px 10px rgba(0,0,0,0.3);
       transition: 0.5s;
       &:hover {
         transform: translateX(-50%) translateY(-3%)
@@ -461,7 +479,7 @@ header{
       height: 360px;
       background-color: #ccc;
       overflow: hidden;
-      box-shadow: 8px 8px 10px rgba(0,0,0,0.1);
+      box-shadow: 8px 8px 10px rgba(0,0,0,0.3);
       transition: 0.5s;
       &:hover {
         transform: translateY(-3%)
@@ -475,7 +493,7 @@ header{
       height: 280px;
       background-color: #ccc;
       overflow: hidden;
-      box-shadow: 8px 8px 10px rgba(0,0,0,0.1);
+      box-shadow: 8px 8px 10px rgba(0,0,0,0.3);
       transition: 0.5s;
       &:hover {
         transform: translateY(-3%)
@@ -489,7 +507,7 @@ header{
       height: 300px;
       background-color: #ccc;
       overflow: hidden;
-      box-shadow: 8px 8px 10px rgba(0,0,0,0.1);
+      box-shadow: 8px 8px 10px rgba(0,0,0,0.3);
       transition: 0.5s;
       &:hover {
         transform: translateY(-3%)
