@@ -65,13 +65,10 @@ img{
   z-index: 25;
   padding: 0 70px;
   transition: 0.5s;
+  background: #fff;
 }
 .headerWrap.onColor{
-  background: #fff;
-  color: #222;
-  .headerSpan{
-    color: #222;
-  }
+  background: none;
 }
 header{
   width: 95%;
@@ -85,6 +82,11 @@ header{
     transition-duration: 0.5s;
     #titleFont{
       font-family: 'Azonix';
+      transition: 0.5s;
+      color: #222;
+    }
+    #titleFont.onColor{
+      color: #fff;
     }
     h1{
       margin-bottom: 0;
@@ -96,6 +98,7 @@ header{
     }
     ul{
         margin-bottom: 0em;
+        color : #222;
         display: flex;
         transition: 0.5s;
         li{
@@ -106,6 +109,7 @@ header{
             padding: 0 15px;
             a {
               font-family: 'NanumSquare';
+              color : #222;
             }
             &:last-child{
                 width: 70px;
@@ -155,9 +159,6 @@ header{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    .toggles.toggleColor{
-      background: #000;
-    }
   }
 
 }
@@ -165,7 +166,7 @@ header{
   position: absolute;
   top: 0;
   right: 5%;
-  .toggles.toggleColor{
+  .toggles{
     background: #fff;
   }
 }
