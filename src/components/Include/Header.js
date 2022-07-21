@@ -22,6 +22,7 @@ ${props =>
     }
 `
 const ToggleSpan = styled.span`
+display: block;
 background: #fff;
 width: 30px;
 height: 3px;
@@ -34,8 +35,8 @@ ${props =>
         css`
         &:nth-child(1){
             transform: rotate(45deg);
-            position : absolute;
-            bottom : 42px;
+            position: absolute;
+            top: 7px;
         }
         &:nth-child(2){
             opacity : 0;
@@ -43,14 +44,13 @@ ${props =>
         }
         &:nth-child(3){
             transform: rotate(-45deg);
-            position : absolute;
         }
     `
     }
 `
 
 const BlackBg = styled.div`
-position: absolute;
+position: fixed;
 top:0;
 left:0;
 background-color: rgba(0,0,0,0.7);
@@ -70,14 +70,14 @@ ${props =>
 
 
 const Header = () => {
-    const navigate = useNavigate();    
-    const loginUser = useSelector(state=>state.users.loginUser);
+    const navigate = useNavigate();
+    const loginUser = useSelector(state => state.users.loginUser);
     const dispatch = useDispatch();
     const [isOn, setIsOn] = useState(false);
     function toggleBtn() {
         setIsOn(!isOn);
     }
-    const LogoutFunc = () =>{
+    const LogoutFunc = () => {
         sessionStorage.clear();
         alert('로그아웃 되었습니다.');
         navigate("/");
@@ -86,31 +86,36 @@ const Header = () => {
 
     return (
         <>
-            <header>
-                <h1 onClick={isOn ? toggleBtn : null}><Link to="/">Strato</Link></h1>
-                <ul>
-                    <li>
-                        EN
-                    </li>
-                    {/* <li><Link to="/reservation">Reservation</Link></li> */}
-                        {sessionStorage.getItem('name') 
-                        ? <li><Link to="/rescheck">Reservation</Link></li> 
-                        : <li><Link to="/reservation">Reservation</Link></li>}
+            <div className='headerWrap'>
+                {isOn === false && <header>
+                    <h1><Link to="/">Strato</Link></h1>
+                    <ul>
+                        <li>
+                            EN
+                        </li>
+                        {/* <li><Link to="/reservation">Reservation</Link></li> */}
                         {sessionStorage.getItem('name')
-                        ? <li onClick={LogoutFunc}>Logout</li> 
-                        : <li><Link to="/reservation">Login</Link></li>}
-                    <li id="toggle" onClick={toggleBtn}>
+                            ? <li><Link to="/rescheck">Reservation</Link></li>
+                            : <li><Link to="/reservation">Reservation</Link></li>}
+                        {sessionStorage.getItem('name')
+                            ? <li onClick={LogoutFunc}>Logout</li>
+                            : <li><Link to="/reservation">Login</Link></li>}
+                    </ul>
+                </header>}
+                <div id="toggle" onClick={toggleBtn} className={isOn ? 'on' : ''}>
+                    <div className='toggleWrap'>
                         <ToggleSpan className='toggles' isOn={isOn} />
                         <ToggleSpan className='toggles' isOn={isOn} />
                         <ToggleSpan className='toggles' isOn={isOn} />
-                    </li>
-                </ul>
-            </header>
+                    </div>
+
+                </div>
+            </div>
             <BlackBg isOn={isOn} onClick={toggleBtn} />
             <ToggleBg isOn={isOn}>
                 <ul id='subMenu'>
-                        {sessionStorage.getItem('name') 
-                        ? <li><Link to="/rescheck" onClick={toggleBtn}>Reservation</Link></li> 
+                    {sessionStorage.getItem('name')
+                        ? <li><Link to="/rescheck" onClick={toggleBtn}>Reservation</Link></li>
                         : <li><Link to="/reservation" onClick={toggleBtn}>Reservation</Link></li>}
                     <li><Link to="/aboutus" onClick={toggleBtn}>About Us</Link></li>
                     <li><Link to="/rooms" onClick={toggleBtn}>Rooms</Link></li>
