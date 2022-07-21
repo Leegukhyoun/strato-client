@@ -16,6 +16,7 @@ const SET_CAL1 = "SET_CAL1";
 const SET_CAL2 = "SET_CAL2";
 const SET_ROOM = "SET_ROOM";
 const SET_NAME = "SET_NAME";
+const SET_SCROLLINDEX = "SET_SCROLLINDEX";
 
 
 // 초기값 설정
@@ -24,6 +25,7 @@ const initialState = {
         loading: false,
         data: null,
         error: null,
+        scrollindex : 1,
     },
     addRoom: {
         room: "STANDARD",
@@ -97,6 +99,12 @@ export const setName = (sessionId) => {
     return {
         type: SET_NAME,
         sessionId
+    }
+}
+export const setScroll = (scrollindex) => {
+    return {
+        type: SET_SCROLLINDEX,
+        scrollindex
     }
 }
 
@@ -239,6 +247,14 @@ export default function res(state = initialState, action) {
                 addRoom: {
                     ...state.addRoom,
                     name: action.sessionId,
+                }
+            }
+        case SET_SCROLLINDEX:
+            return {
+                ...state,
+                res: {
+                    ...state.res,
+                    scrollindex: action.scrollindex,
                 }
             }
         default:
