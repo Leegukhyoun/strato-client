@@ -12,19 +12,11 @@ const Index = () => {
   const body = document.querySelector('body');
   body.classList.add('scrollHide');
 
-  useEffect(()=>{
-      const footer = document.querySelector('footer');
-      body.classList.add('scrollHide');
-      footer.classList.add('positioning');
-      // document.querySelector('.positioning').style.bottom = 0;
-      // document.querySelector('.positioning').style.bottom = -50+'%';
-      return()=>{
-        body.classList.remove('scrollHide');
-        footer.classList.remove('positioning')
-      }
-  },[])
   
   useEffect(() => {
+    const footer = document.querySelector('footer');
+    body.classList.add('scrollHide');
+    footer.classList.add('positioning');
     const wheelHandler = (e) => {
       e.preventDefault();
       const { deltaY } = e;
@@ -176,13 +168,14 @@ const Index = () => {
       setScrollIndex(1);
     }
 
-
     const outerDivRefCurrent = outerDivRef.current;
     const topRefBtn = TopRef.current;
-
     outerDivRefCurrent.addEventListener("wheel", wheelHandler);
     topRefBtn.addEventListener("click", OnBtn);
+
     return () => {
+      body.classList.remove('scrollHide');
+      footer.classList.remove('positioning')
       outerDivRefCurrent.removeEventListener("wheel", wheelHandler);
       topRefBtn.removeEventListener("click", OnBtn);
     };
