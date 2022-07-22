@@ -4,6 +4,27 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+  font-family: 'CookieRunOTF-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/CookieRunOTF-Bold00.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'EarlyFontDiary';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EarlyFontDiary.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {font-family: "Azonix"; src: url("//db.onlinewebfonts.com/t/50cd2aad9c8f35800bb6beac3ad42f16.eot"); src: url("//db.onlinewebfonts.com/t/50cd2aad9c8f35800bb6beac3ad42f16.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/50cd2aad9c8f35800bb6beac3ad42f16.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/50cd2aad9c8f35800bb6beac3ad42f16.woff") format("woff"), url("//db.onlinewebfonts.com/t/50cd2aad9c8f35800bb6beac3ad42f16.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/50cd2aad9c8f35800bb6beac3ad42f16.svg#Azonix") format("svg"); }
+
+@font-face {
+  font-family: 'Y_Spotlight';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/Y_Spotlight.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
