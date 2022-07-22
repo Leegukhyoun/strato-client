@@ -19,9 +19,26 @@ const LoginContainer = () => {
     const onChange = (e) => {
         dispatch(setLoginInput(e));
     }
+
+
+    
+
+
+
     const onSubmit = () => {
-        // dispatch(setLogin());
+        console.log(loginUser.name);
         dispatch(getLogin());
+            dispatch(getLogin()).then((result) => {
+                console.log(result);
+                if(result === "id"){
+                    return alert('아이디가 맞지 않습니다.')
+                }else if(result === 'pw'){
+                    return alert('비밀번호가 맞지 않습니다.')
+                } else if(result === "성공"){
+                    onHome();
+                }
+            });
+        console.log(loginUser.name);
     }
 
     return (

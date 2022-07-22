@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setLogout } from '../../module/signup';
-import {MdManageAccounts} from "react-icons/md"
+import {BsFillPersonFill} from "react-icons/bs"
 const ToggleBg = styled.div`
 position: fixed;
 top: 0;
@@ -96,13 +96,23 @@ const Header = () => {
                     <ul className='headerUl'>
                         <li>
                             {sessionStorage.getItem('name')
-                                ?   <div id='userImg'>
-                                        <div id='bgIcon'>
-                                            <MdManageAccounts id='Icon'/>
-                                        </div>
-                                        <p id='idText'>{sessionStorage.getItem('name')}</p>
+                                ?   
+                                <div id='userImg'>
+                                    <div id='bgIcon'>
+                                        <BsFillPersonFill id='Icon' />
                                     </div>
-                                : <li></li>}
+                                    <p id='idText'>{sessionStorage.getItem('name')}</p>
+                                </div>
+                                : 
+                                <Link to="/reservation">
+                                    <div id='userImg'>
+                                        <div id='bgIcon'>
+                                            <BsFillPersonFill id='Icon'/>
+                                        </div>
+                                        <p id='idText'>로그인해주세요</p>
+                                    </div>
+                                </Link>
+                                }
                         </li>
                         <li>
                            EN
@@ -111,7 +121,7 @@ const Header = () => {
                             ? <li><Link to="/rescheck">Reservation</Link></li>
                             : <li><Link to="/reservation">Reservation</Link></li>}
                         {sessionStorage.getItem('name')
-                            ? <li onClick={LogoutFunc}>Logout</li>
+                            ? <li onClick={LogoutFunc} className="pointer">Logout</li>
                             : <li><Link to="/reservation">Login</Link></li>}
                     </ul>
                 </header>
