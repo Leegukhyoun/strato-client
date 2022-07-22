@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useState} from 'react';
 import styled, { css } from 'styled-components'
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setLogout } from '../../module/signup';
 import {MdManageAccounts} from "react-icons/md"
@@ -11,7 +11,7 @@ right: -60%;
 width: 30vw;
 height: 100vh;
 background-color: #000741;
-z-index: 22;
+z-index: 25;
 transition: 0.5s;
 ${props =>
         props.isOn &&
@@ -90,7 +90,7 @@ const Header = () => {
     }
     return (
         <>
-            <div className='headerWrap' style={{color: scrollindex === 3 ? '#222' : ''}}>
+            <div className='headerWrap' style={{color: scrollindex === 3 ? '#222' : '', background: isOn ? 'none' : ''}}>
                 <header style={{display : isOn ? 'none' : 'flex'}}>
                     <h1><Link to="/"><span id='titleFont'>STRATO</span></Link></h1>
                     <ul className='headerUl'>
