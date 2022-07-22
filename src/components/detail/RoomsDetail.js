@@ -18,7 +18,7 @@ const RoomsDetail = () => {
                     <ul>
                         <li className='standard'>
                             <div>
-                                <img src='images/Rooms/rooms_visual_1.png' alt='스탠다드방' />
+                                <img src='images/rooms/rooms_visual_1.png' alt='스탠다드방' />
                             </div>
                             <div className='roomExplain'>
                                 <h2>STANDARD</h2>
@@ -80,12 +80,12 @@ const RoomsDetail = () => {
                                 </ul>
                             </div>
                             <div>
-                                <img src='images/Rooms/rooms_visual_2.png' alt='스탠다드방' />
+                                <img src='images/rooms/rooms_visual_2.png' alt='스탠다드방' />
                             </div>
                         </li>
                         <li className='deluxe'>
                             <div>
-                                <img src='images/Rooms/rooms_visual_3.png' alt='스탠다드방' />
+                                <img src='images/rooms/rooms_visual_3.png' alt='스탠다드방' />
                             </div>
                             <div className='roomExplain'>
                                 <h2>DELUXE</h2>
@@ -152,7 +152,7 @@ const RoomsDetail = () => {
                                 </ul>
                             </div>
                             <div>
-                                <img src='images/Rooms/rooms_visual_4.png' alt='스탠다드방' />
+                                <img src='images/rooms/rooms_visual_4.png' alt='스탠다드방' />
                             </div>
                         </li>
                     </ul>
