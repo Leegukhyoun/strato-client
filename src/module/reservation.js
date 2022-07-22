@@ -109,6 +109,7 @@ export const resReset = () => {
 export const setSubmit = () => async (dispatch, getState) => {
     const formdata = getState().res.addRoom;
     try {
+        //eslint-disable-next-line
         const response = await axios.post(`${API_URL}/createRes`, formdata);
     }
     catch (e) {
@@ -118,6 +119,7 @@ export const setSubmit = () => async (dispatch, getState) => {
 
 export const searchRes = () => async dispatch => {
     dispatch({type: GET_RES});
+    //eslint-disable-next-line
     const sessionId = sessionStorage.getItem('name');
     try {
         const response = await axios.get(`${API_URL}/rescheck/${sessionStorage.getItem('name')}`);

@@ -71,6 +71,7 @@ ${props =>
 
 const Header = () => {
     const navigate = useNavigate();    
+    //eslint-disable-next-line
     const loginUser = useSelector(state=>state.users.loginUser);
     const scrollindex = useSelector(state=>state.utils.utils.scrollindex);
     const dispatch = useDispatch();

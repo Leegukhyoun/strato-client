@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { API_URL } from '../../config/contansts';
 
 const ReserList = ({res}) => {
     const navigator = useNavigate();
