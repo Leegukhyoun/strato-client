@@ -16,8 +16,8 @@ const Dining = () => {
             <ul>
                 <li onMouseEnter={onMouseEnter} className={isOn ? "diningLi mainLi" : "diningLi"}>
                     <div className='diningText'>
-                        <h3 className='Azonix'>STRATO</h3>
                         <div className='mainDiningText'>
+                        <h3 className='Azonix'>STRATO</h3>
                             <p>성층권을 누비며 새로운 세상을 알아가는 당신에게</p>
                             <p>초고층 스카이뷰 레스토랑</p>
                             <p>OPEN / CLOSE : <span>08:00 ~ 21: 00</span></p>
@@ -28,8 +28,8 @@ const Dining = () => {
                 </li>
                 <li className="diningLi" onMouseLeave={onMouseLeave} onMouseEnter={otherLiEnter}>
                 <div className='diningText'>
-                        <h3 className='Azonix'>PASSION</h3>
                         <div className='mainDiningText'>
+                        <h3 className='Azonix'>PASSION</h3>
                             <p>뜨거운 태양과 같이</p>
                             <p>오픈키친에서 선사하는 예술같은 요리</p>
                             <p>OPEN / CLOSE : <span>11:00 ~ 22: 00</span></p>
@@ -40,8 +40,8 @@ const Dining = () => {
                 </li>
                 <li className="diningLi" onMouseLeave={onMouseLeave} onMouseEnter={otherLiEnter}>
                 <div className='diningText'>
-                        <h3 className='Azonix'>ABYSS</h3>
                         <div className='mainDiningText'>
+                        <h3 className='Azonix'>ABYSS</h3>
                             <p>심해에서만 찾을 수 있는 고요함</p>
                             <p>국내 최고 바텐더가 선보이는 주류의 향연</p>
                             <p>OPEN / CLOSE : <span>19:00 ~ 02: 00</span></p>
