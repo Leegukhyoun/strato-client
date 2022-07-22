@@ -6,9 +6,8 @@ const ResPage = ({onHome, onChange, onSubmit, loginUser}) => {
 
     const onSubmitch = (e) => {
         e.preventDefault();
-        if(loginUser.name !== "" && loginUser.birth !== ""){
+        if(loginUser.name !== "" && loginUser.phone !== ""){
             onSubmit();
-            onHome();
         }
     }
 

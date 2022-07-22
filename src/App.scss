@@ -110,7 +110,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  line-height: 10vh;
   z-index: 25;
   #titleFont{
     font-family: 'Azonix';
@@ -124,33 +123,38 @@ header {
         margin-bottom: 0em;
         color : inherit;
         display: flex;
+        align-items: center;
         li{
             position: relative;
             font-family: 'NanumSquare';
             font-size: 17px;
             padding: 0 15px;
-            transition: 0.5s;
+            cursor: pointer;
             &:nth-child(1){
-              height: 50px;
-              width: 60px;
-              position: absolute;
-              top: 20px;
-              right: 22%;
-              cursor: pointer;
-              #idText{
-                position: absolute;
-                top: 70%;
-                left: 0%;
-                width: 60px;
-                font-size: 10px;
-                line-height: 15px;
-              }
-              #bgIcon{
+              padding-top: 10px;
+              #userImg{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
                 width: 100%;
-                height: 30px;
-                font-size: 37px;
-                #Icon{
-                  margin-bottom: 25px;
+                #idText{
+                  width: 100%;
+                  font-size: 10px;
+                  line-height: 15px;
+                }
+                #bgIcon{
+                  cursor: pointer;
+                  width: 100%;
+                  height: 30px;
+                  font-size: 32px;
+                  margin-bottom: 3px;
+                  svg {
+                    width: 100%;
+                  }
+                  #Icon{
+                    margin-bottom: 25px;
+                  }
                 }
               }
             }
@@ -158,15 +162,11 @@ header {
               font-family: 'NanumSquare';
               color : inherit;
             }
-            &:hover{
-              color: var(--main-color);
-            }
             &:last-child{
                 width: 70px;
-                height: 10vh;
+
                 display: flex;
-                justify-content: center;
-                align-items: center;
+
                 flex-direction: column;
             }
         }
@@ -205,6 +205,7 @@ header {
   height: 100vh;
 }
 #toggle {
+  cursor: pointer;
   width: 5%;
   height: 100%;
   position: relative;
@@ -259,6 +260,7 @@ header {
       left: 50%;
       transform: translateX(-50%);
       width: 60%;
+      min-width: 1100px;
       height: 150px;
       background: #fff;
       text-align: center;
@@ -281,7 +283,6 @@ header {
         &:nth-child(2){
           width: 50%;
           border-right: 1px solid #ccc;
-          min-width: 450px;
           position: relative;
         }
         &:nth-child(3){
@@ -646,6 +647,7 @@ header {
       display: flex;
       flex-direction: column;
       text-align: center;
+      min-height: 600px;
       h2 {
         font-size: 30px;
         padding: 50px;
@@ -1173,6 +1175,7 @@ header {
     //rescheck
 
     #res-check{
+      margin-bottom: 80px;
       .titleRes{
         font-size: 20px;
       }
@@ -1204,7 +1207,7 @@ header {
         > li{
           text-align: center;
           width: 33.3333%;
-          padding-bottom: 20px;
+          padding: 20px 0;
           img{
             height: auto;
             width: 300px;

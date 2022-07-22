@@ -21,9 +21,12 @@ const initialState = {
         addr2: "",
     },
     loginUser: {
-        name:"",
-        phone:"",
-        islog:null,
+        loading: false,
+        data: null,
+        error: null,
+        name : "",
+        phone: "",
+        islog : null,
     }
 }
 
@@ -94,6 +97,7 @@ export default function users(state = initialState, action) {
             return {
                 ...state,
                 loginUser: {
+                    ...state.loginUser,
                     loading: false,
                     data: action.loginUser,
                     error: null
@@ -103,6 +107,7 @@ export default function users(state = initialState, action) {
             return {
                 ...state,
                 loginUser: {
+                    ...state.loginUser,
                     loading: false,
                     data: null,
                     error: action.error
@@ -116,22 +121,35 @@ export default function users(state = initialState, action) {
                     [action.name] : action.value
                     }
             }
-            case SET_LOGIN:
-                return {
-                    ...state,
-                    loginUser: {
-                        ...state.loginUser,
-                        islog : action.nowLoged
-                        }
+        case SET_LOGIN:
+            return {
+                ...state,
+                loginUser: {
+                    ...state.loginUser,
+                    islog: action.nowLoged
                 }
-                case SET_LOGOUT:
-                    return {
-                        ...state,
-                        loginUser: {
-                            ...state.loginUser,
-                            islog : null
-                            }
-                    }
+            }
+        case SET_LOGOUT:
+            return {
+                ...state,
+                loginUser: {
+                    ...state.loginUser,
+                    islog: null
+                }
+            }
+        case SET_LOGINPUT_RESET:
+            return {
+                ...state,
+                loginUser: {
+                    ...state.loginUser,
+                    loading: false,
+                    data: null,
+                    error: null,
+                    name : "",
+                    phone: "",
+                    islog : null,
+                }
+            }
         //로그인 리듀서 끝
         default:
             return state;
@@ -144,6 +162,7 @@ const GET_LOGIN_SUCCESS = "GET_LOGIN_SUCCESS";
 const SET_LOGIN_INPUT = "SET_LOGIN_INPUT";
 const SET_LOGIN = "SET_LOGIN";
 const SET_LOGOUT = "SET_LOGOUT";
+const SET_LOGINPUT_RESET = "SET_LOGINPUT_RESET";
 
 // 로그인 액션 생성 함수
 export const setLoginInput = (e) => {
@@ -164,13 +183,14 @@ export const getLogin = () => async (dispatch, getState) => {
         const response = await axios.post(`http://localhost:3001/userlogin`, formdata);
         const users = response.data;
         dispatch({ type:GET_LOGIN_SUCCESS, users})
-            if(users === 'id is undefined') return alert('id가 올바르지 않습니다.');
-            if(users === 'pw is undefined') return alert('password가 올바르지 않습니다.');
+            if(users === 'id is undefined') return "id";
+            if(users === 'pw is undefined') return "pw";
             if(users === 'login successed'){
-                alert('login 성공!');
                 sessionStorage.setItem('name', formdata.name);
                 const nowLoged = sessionStorage.getItem('name');
                 dispatch({type : SET_LOGIN, nowLoged})
+                dispatch({type : SET_LOGINPUT_RESET})
+                return "성공"
             };
     }
     catch (e){
