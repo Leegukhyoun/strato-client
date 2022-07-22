@@ -26,10 +26,8 @@ const LoginContainer = () => {
 
 
     const onSubmit = () => {
-        console.log(loginUser.name);
         dispatch(getLogin());
             dispatch(getLogin()).then((result) => {
-                console.log(result);
                 if(result === "id"){
                     return alert('아이디가 맞지 않습니다.')
                 }else if(result === 'pw'){
@@ -38,7 +36,6 @@ const LoginContainer = () => {
                     onHome();
                 }
             });
-        console.log(loginUser.name);
     }
 
     return (

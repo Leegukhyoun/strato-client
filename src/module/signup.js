@@ -180,7 +180,7 @@ export const setLoginInput = (e) => {
 export const getLogin = () => async (dispatch, getState) => {
     const formdata = getState().users.loginUser;
     try{
-        const response = await axios.post(`http://localhost:3001/userlogin`, formdata);
+        const response = await axios.post(`${API_URL}/userlogin`, formdata);
         const users = response.data;
         dispatch({ type:GET_LOGIN_SUCCESS, users})
             if(users === 'id is undefined') return "id";
