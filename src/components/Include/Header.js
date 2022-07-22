@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setLogout } from '../../module/signup';
-
+import {MdManageAccounts} from "react-icons/md"
 const ToggleBg = styled.div`
 position: fixed;
 top: 0;
@@ -94,6 +94,16 @@ const Header = () => {
                 <header style={{display : isOn ? 'none' : 'flex'}}>
                     <h1><Link to="/"><span id='titleFont'>STRATO</span></Link></h1>
                     <ul className='headerUl'>
+                        <li>
+                            {sessionStorage.getItem('name')
+                                ?   <div id='userImg'>
+                                        <div id='bgIcon'>
+                                            <MdManageAccounts id='Icon'/>
+                                        </div>
+                                        <p id='idText'>{sessionStorage.getItem('name')}</p>
+                                    </div>
+                                : <li></li>}
+                        </li>
                         <li>
                            EN
                         </li>
