@@ -19,6 +19,7 @@ const DiningIndex = () => {
             <div id='diningIndex'>
                 <div className="dinDetailTitle">
                     <h2>DINING</h2>
+                    <span>Piccolo's Best Choice</span>
                 </div>
                 <div className='diningCon contentInner'>
                     <h2>다이내믹 키친 뷔페 레스토랑</h2>

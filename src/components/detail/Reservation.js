@@ -7,7 +7,7 @@ const CheckReservation = ({res}) => {
     return (
         <div className='res'>
             <div className="res-top">
-            <h2>Reservation</h2>
+            <h2>　</h2>
                 <img src='../images/dining_visual_05_2.png' alt=""/>
             </div>
             <div className="res-confirm contentInner">

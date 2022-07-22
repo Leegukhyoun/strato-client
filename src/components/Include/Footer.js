@@ -28,7 +28,7 @@ const Footer = () => {
                     <li>Every tel number, name, address and any other information is false. And we don't have any rights for every picture on the website.</li>
                 </ul>
             </div>
-            <h2>LOGO</h2>
+            <h2 id="footerLogo">STRATO</h2>
         </footer>
     );
 };

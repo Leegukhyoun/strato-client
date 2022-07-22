@@ -17,7 +17,7 @@ const Rooms = () => {
                         <img src="images/rooms/rooms_visual_1.png" alt="호텔_방_사진1" />
                     </h3>
                     <div className="roomText">
-                        <h2>STANDARD</h2>
+                        <h2 className='Azonix'>STANDARD</h2>
                         <span>Our basic room for every one</span>
                     </div>
                 </div>
@@ -26,7 +26,7 @@ const Rooms = () => {
                         <img src="images/rooms/rooms_visual_2.png" alt="호텔_방_사진1" />
                     </h3>
                     <div className="roomText">
-                        <h2>SUPERIOR</h2>
+                        <h2 className='Azonix'>SUPERIOR</h2>
                         <span>Best choice for you</span>
                     </div>
                 </div>
@@ -35,7 +35,7 @@ const Rooms = () => {
                         <img src="images/rooms/rooms_visual_3.png" alt="호텔_방_사진1" />
                     </h3>
                     <div className="roomText">
-                        <h2>DELUXE</h2>
+                        <h2 className='Azonix'>DELUXE</h2>
                         <span>Elegant, Marvelous, Deluxe</span>
                     </div>
                 </div>
@@ -44,7 +44,7 @@ const Rooms = () => {
                         <img src="images/rooms/rooms_visual_4.png" alt="호텔_방_사진1" />
                     </h3>
                     <div className="roomText">
-                        <h2>SUITE</h2>
+                        <h2 className='Azonix'>SUITE</h2>
                         <span>No regret Indeed</span>
                     </div>
                 </div>

@@ -16,7 +16,7 @@ const Dining = () => {
             <ul>
                 <li onMouseEnter={onMouseEnter} className={isOn ? "diningLi mainLi" : "diningLi"}>
                     <div className='diningText'>
-                        <h3>STRATO</h3>
+                        <h3 className='Azonix'>STRATO</h3>
                         <div className='mainDiningText'>
                             <p>성층권을 누비며 새로운 세상을 알아가는 당신에게</p>
                             <p>초고층 스카이뷰 레스토랑</p>
@@ -28,7 +28,7 @@ const Dining = () => {
                 </li>
                 <li className="diningLi" onMouseLeave={onMouseLeave} onMouseEnter={otherLiEnter}>
                 <div className='diningText'>
-                        <h3>PASSION</h3>
+                        <h3 className='Azonix'>PASSION</h3>
                         <div className='mainDiningText'>
                             <p>뜨거운 태양과 같이</p>
                             <p>오픈키친에서 선사하는 예술같은 요리</p>
@@ -40,7 +40,7 @@ const Dining = () => {
                 </li>
                 <li className="diningLi" onMouseLeave={onMouseLeave} onMouseEnter={otherLiEnter}>
                 <div className='diningText'>
-                        <h3>ABYSS</h3>
+                        <h3 className='Azonix'>ABYSS</h3>
                         <div className='mainDiningText'>
                             <p>심해에서만 찾을 수 있는 고요함</p>
                             <p>국내 최고 바텐더가 선보이는 주류의 향연</p>

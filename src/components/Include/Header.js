@@ -84,6 +84,10 @@ const Header = () => {
         navigate("/");
         dispatch(setLogout());
     }
+    const SubLogout = () => {
+        setIsOn(!isOn);
+        LogoutFunc();
+    }
     return (
         <>
             <div className='headerWrap' style={{color: scrollindex === 3 ? '#222' : ''}}>
@@ -114,12 +118,14 @@ const Header = () => {
             <ToggleBg isOn={isOn}>
                 <ul id='subMenu'>
                     {sessionStorage.getItem('name')
-                        ? <li><Link to="/rescheck" onClick={toggleBtn}>Reservation</Link></li>
-                        : <li><Link to="/reservation" onClick={toggleBtn}>Reservation</Link></li>}
-                    <li><Link to="/aboutus" onClick={toggleBtn}>About Us</Link></li>
-                    <li><Link to="/rooms" onClick={toggleBtn}>Rooms</Link></li>
-                    <li><Link to="/dining" onClick={toggleBtn}>Dining</Link></li>
-                    <li><Link to="/membership" onClick={toggleBtn}>Sign-Up</Link></li>
+                        ? <li><Link to="/rescheck" onClick={toggleBtn} className='subText'>Reservation</Link></li>
+                        : <li><Link to="/reservation" onClick={toggleBtn} className='subText'>Reservation</Link></li>}
+                    <li><Link to="/aboutus" onClick={toggleBtn} className='subText'>About Us</Link></li>
+                    <li><Link to="/rooms" onClick={toggleBtn} className='subText'>Rooms</Link></li>
+                    <li><Link to="/dining" onClick={toggleBtn} className='subText'>Dining</Link></li>
+                    {sessionStorage.getItem('name')
+                        ? <li onClick={SubLogout} className='subText'>LogOut</li>
+                        :  <li><Link to="/membership" onClick={toggleBtn} className='subText'>Sign-Up</Link></li>}
                 </ul>
             </ToggleBg>
         </>
