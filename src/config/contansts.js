@@ -1,1 +1,1 @@
-export const API_URL = process.env.NODE_ENV === "https://strato-server-01.herokuapp.com/";
+export const API_URL = "https://strato-server-01.herokuapp.com";
