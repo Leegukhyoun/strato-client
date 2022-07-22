@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState} from 'react';
 import PopupPostCode from './AddressSearch/PopupPostCode';
 import PopupDom from './AddressSearch/PopupDom';
 

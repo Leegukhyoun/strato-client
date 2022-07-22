@@ -1,5 +1,3 @@
-import axios from "axios";
-
 // 리덕스 액션타입, 초깃갑, 액션 생성 함수, 리듀서
 const SET_SCROLLINDEX = "SET_SCROLLINDEX";
 const MSG_TOGGLE = "MSG_TOGGLE";

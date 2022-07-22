@@ -189,7 +189,7 @@ const Index = () => {
       document.querySelector('.headerWrap').classList.remove('onColor');
     };
 
-    
+    //eslint-disable-next-line
   }, []);
 
   return (

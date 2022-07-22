@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {BsFillCalendarFill} from "react-icons/bs"
 import {AiFillPlusSquare} from "react-icons/ai"
 import {AiFillMinusSquare} from "react-icons/ai"

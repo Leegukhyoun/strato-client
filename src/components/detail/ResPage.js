@@ -14,7 +14,6 @@ const ResPage = ({onHome, onChange, onSubmit, loginUser}) => {
     return (
         <div className="res">
             <div className="res-top">
-                <h2></h2>
             </div>
             <div className="res-confirm contentInner">
                 <h2>로그인</h2>
