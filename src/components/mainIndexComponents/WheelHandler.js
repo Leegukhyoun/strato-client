@@ -18,8 +18,9 @@ const Index = () => {
 
   
   useEffect(() => {
-    document.querySelector('.headerWrap').classList.remove('onColor');
-    document.querySelectorAll('.toggles').forEach(toggle=>toggle.classList.remove('toggleColor'))
+    document.querySelector('.headerWrap').classList.add('onColor');
+    document.querySelector('#titleFont').classList.add('onColor');
+    
     const footer = document.querySelector('footer');
     body.classList.add('scrollHide');
     footer.classList.add('positioning');
@@ -186,8 +187,8 @@ const Index = () => {
       footer.classList.remove('positioning')
       outerDivRefCurrent.removeEventListener("wheel", wheelHandler);
       topRefBtn.removeEventListener("click", OnBtn);
-      document.querySelector('.headerWrap').classList.add('onColor');
-      document.querySelectorAll('.toggles').forEach(toggle=>toggle.classList.add('toggleColor'))
+      document.querySelector('.headerWrap').classList.remove('onColor');
+      document.querySelector('#titleFont').classList.remove('onColor');
     };
 
     
