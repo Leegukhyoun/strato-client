@@ -19,7 +19,6 @@ const Index = () => {
   
   useEffect(() => {
     document.querySelector('.headerWrap').classList.add('onColor');
-    document.querySelector('#titleFont').classList.add('onColor');
     
     const footer = document.querySelector('footer');
     body.classList.add('scrollHide');
@@ -188,7 +187,6 @@ const Index = () => {
       outerDivRefCurrent.removeEventListener("wheel", wheelHandler);
       topRefBtn.removeEventListener("click", OnBtn);
       document.querySelector('.headerWrap').classList.remove('onColor');
-      document.querySelector('#titleFont').classList.remove('onColor');
     };
 
     
