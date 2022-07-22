@@ -47,7 +47,7 @@ const Signup = ({onChange, onHome, onSubmit, createUser}) => {
     return (
         <div className="res">
             <div className="res-top">
-                <h2>Strato 멤버십 가입</h2>
+                {/* <h2>Strato 멤버십 가입</h2> */}
             </div>
             <div className="res-confirm contentInner">
                 <h2>회원 정보 입력</h2>

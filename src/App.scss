@@ -131,8 +131,12 @@ header{
     top: 50%;
     left: 35%;
     transform: translate(-50%, -50%);
+    .subText{
+      font-family: 'Azonix';
+      padding-left: 50px;
+    }
     li{
-        font-family: 'NanumSquare';
+        font-family: 'Azonix';
         font-size: 40px;
         margin: 30px 0;
         font-weight: lighter;
@@ -355,15 +359,15 @@ header{
     color: #fff;
     z-index: 20;
     h2{
-      font-family: inherit;
       color: inherit;
       font-size: 130px;
       line-height: 0;
       margin-bottom: 70px;
+      font-family: 'Azonix';
     }
     span{
-      font-family: inherit;
       font-size: 26px;
+      font-family: 'NanumSquare';
     }
   }
 
@@ -505,6 +509,7 @@ header{
         padding-top: 50px;
         text-align: center;
         font-family: 'EF_다이어리';
+        text-shadow: 1px 1px 4px;
       }
       &:hover {
         transform: translateY(-3%)
@@ -684,6 +689,7 @@ header{
                   margin-top: 30px;
                   margin-bottom: 10px;
                   font-size: 40px;
+                  font-family: 'Azonix';
                   color: var(--main-color);
                   position: relative;
                   &::after{
@@ -701,17 +707,21 @@ header{
             ul{
               position: absolute;
               top: 50%;
-              left: 30%;
+              left: 25%;
               transform: translateY(-50%);
+              width: 500px;
               li{
                 padding: 30px 0;
                 display: flex;
                 align-items: flex-start;
                 line-height: 1;
+                width: 100%;
                 h3{
                   display: inline-block;
                   padding-right: 30px;
                   font-size: 24px;
+                  width: 200px;
+                  text-align: center;
                 }
                 span{
                   font-size: 16px;
@@ -750,6 +760,10 @@ header{
     align-items: center;
     flex-direction: column;
     color: #fff;
+    #footerLogo {
+      font-family: 'Azonix';
+      font-size: 30px;
+    }
     .footerNotice{
       display: flex;
       justify-content: flex-start;
@@ -796,6 +810,12 @@ header{
   //Footer end
 
   //activity
+  .actMenu{
+    color: #000;
+    font-size: 20px;
+    font-family: 'NanumSquare';
+    font-weight: bold;
+  }
 #actText{
   position: absolute;
   z-index: 3;
@@ -803,7 +823,7 @@ header{
   text-align: center;
   top: 10%;
   left: 50%;
-  font-size: 20px;
+  font-size: 16px;
   transform: translateX(-50%);
   ul{
     display: flex;
@@ -864,12 +884,22 @@ header{
     position: relative;
     .dinDetailTitle{
       height: 100vh;
-    background: fixed url('../public/images/dining_visual_03_1.png') center center /cover no-repeat;
+      background: fixed url('../public/images/dining_visual_03_1.png') center center /cover no-repeat;
       h2{
-        font-size: 70px;
-      line-height: 100vh;
-      text-align: center;
-      color: #fff;
+        font-size: 130px;
+        line-height: 100vh;
+        text-align: center;
+        color: #fff;
+        font-family: 'Azonix';
+      }
+      span{
+        position: absolute;
+        top: 16%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 20px;
+        color: #fff;
+        font-family: 'NanumSquare';
       }
     }
   }
@@ -1017,22 +1047,24 @@ header{
             text-align: center;
             padding-top: 120px;
             h1 {
-              font-size: 30px;
+              font-size: 50px;
               color: #000741;
             }
             h2 {
-              width: 500px;
+              width: 1000px;
               margin: 0 auto;
               padding: 20px 0;
               font-size: 36px;
               color: #000741;
+              font-family: 'CookieRun';
             }
             p {
               padding: 30px;
-              width: 525px;
+              width: 1000px;
               margin: 0 auto;
               font-size: 18px;
               color: #555;
+              font-family: 'CookieRun';
             }
           }
           #brandS-m {
@@ -1052,10 +1084,13 @@ header{
                 text-align: center;
                 color: #fff;
                 text-shadow: 3px 3px 2px #000;
+                padding-bottom: 300px;
                 p {
                   font-size: 21px;
+                  font-family: 'CookieRun';
                   span {
-                    font-size: 36px;
+                    font-size: 50px;
+                    font-family: 'Azonix';
                   }
                 }
               }
@@ -1067,14 +1102,15 @@ header{
               padding: 100px 0;
                 h2 {
                   padding: 30px 0;
-                  font-size: 28px;
                   margin-right: 30px;
                   font-size: 36px;  
+                  font-family: 'CookieRun';
                 }
                 p {
                   width: 600px;
                   padding: 30px;
-                  font-size: 16px;
+                  font-size: 17px;
+                  font-family: 'CookieRun';
                 }
                 
               }
@@ -1203,3 +1239,13 @@ header{
     // }
 
     //Calend
+
+    //font
+      .Azonix{
+        font-family: 'Azonix';
+      }
+      .NanumSquare{
+        font-family: 'NanumSquare';
+        font-size: 17px;
+      }
+    //font

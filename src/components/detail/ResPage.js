@@ -15,10 +15,10 @@ const ResPage = ({onHome, onChange, onSubmit, loginUser}) => {
     return (
         <div className="res">
             <div className="res-top">
-                <h2>Reservation</h2>
+                <h2></h2>
             </div>
             <div className="res-confirm contentInner">
-                <h2>예약조회</h2>
+                <h2>로그인</h2>
                 <div className="mWrap contentInner">
                     <div className="member">
                         <h3>회원 로그인</h3>
