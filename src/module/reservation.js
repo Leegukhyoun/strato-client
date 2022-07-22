@@ -1,5 +1,6 @@
 import axios from "axios";
 import moment from "moment";
+import { API_URL } from '../config/contansts'
 
 
 // 리덕스 액션타입, 초깃갑, 액션 생성 함수, 리듀서
@@ -108,7 +109,7 @@ export const resReset = () => {
 export const setSubmit = () => async (dispatch, getState) => {
     const formdata = getState().res.addRoom;
     try {
-        const response = await axios.post(`http://localhost:3001/createRes`, formdata);
+        const response = await axios.post(`${API_URL}/createRes`, formdata);
     }
     catch (e) {
         dispatch({ type: SET_RES_RESET })
@@ -119,7 +120,7 @@ export const searchRes = () => async dispatch => {
     dispatch({type: GET_RES});
     const sessionId = sessionStorage.getItem('name');
     try {
-        const response = await axios.get(`http://localhost:3001/rescheck/${sessionStorage.getItem('name')}`);
+        const response = await axios.get(`${API_URL}/rescheck/${sessionStorage.getItem('name')}`);
         const res = response.data;
         dispatch({type:GET_RES_ADD, res})
     }

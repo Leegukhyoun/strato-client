@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const ReserList = ({res}) => {
     const navigator = useNavigate();
     function delRes(){
-        axios.delete(`http://localhost:3001/delres/${res.id}`)
+        axios.delete(`${API_URL}/delres/${res.id}`)
         .then((result)=>{
             alert('예약을 취소했습니다.');
             navigator("/");
