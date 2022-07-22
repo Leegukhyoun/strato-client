@@ -90,10 +90,10 @@ const Header = () => {
     }
     return (
         <>
-            <div className='headerWrap'>
+            <div className='headerWrap' style={{color: scrollindex === 3 ? '#222' : ''}}>
                 <header style={{display : isOn ? 'none' : 'flex'}}>
-                    <h1><Link to="/"><span id='titleFont'>Strato</span></Link></h1>
-                    <ul>
+                    <h1><Link to="/"><span id='titleFont'>STRATO</span></Link></h1>
+                    <ul className='headerUl'>
                         <li>
                            EN
                         </li>
@@ -107,9 +107,9 @@ const Header = () => {
                 </header>
                 <div id="toggle" onClick={toggleBtn} className={isOn ? 'on' : ''}>
                     <div className='toggleWrap'>
-                        <ToggleSpan className='toggles' isOn={isOn}/>
-                        <ToggleSpan className='toggles' isOn={isOn}/>
-                        <ToggleSpan className='toggles' isOn={isOn}/>
+                        <ToggleSpan className='toggles' isOn={isOn} style={{background: scrollindex === 3 ? '#222' : ''}}/>
+                        <ToggleSpan className='toggles' isOn={isOn} style={{background: scrollindex === 3 ? '#222' : ''}}/>
+                        <ToggleSpan className='toggles' isOn={isOn} style={{background: scrollindex === 3 ? '#222' : ''}}/>
                     </div>
 
                 </div>
