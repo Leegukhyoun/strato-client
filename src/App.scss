@@ -1329,3 +1329,315 @@ header {
         font-size: 17px;
       }
     //font
+
+    @media screen and (max-width:750px){
+    #ToBtn{
+      display: none;
+    }
+    .headerWrap{
+      padding: 0 30px;
+    }
+    #DOTdisplay{
+      display: none;
+    }
+    .ant-carousel .slick-slide img{
+      width: fit-content;
+      height: 100%;
+      transform: translateX(-37%);
+    }
+    header{
+      ul{
+        display: none;
+        li{
+          &:nth-child(1){
+            #userImg{
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    footer{
+      
+    }
+    #resBar ul{
+      min-width: 300px;
+      display: block;
+      top: 10%;
+      li{
+        background: #fff;
+        border-top: 1px solid #ccc;
+        &:nth-child(1){
+          width: 100%;
+        }
+        &:nth-child(2){
+          width: 100%;
+          line-height: normal;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          .calIcon{
+            top: 50px;
+            left: -45px;
+          }
+          span{
+            margin-bottom: 20px;
+          }
+        }
+        &:nth-child(3){
+          width: 100%;
+        }
+      }
+    }
+    #subMenu{
+      left: 10%;
+      li{
+        font-size: 20px;
+      }
+    }
+    #cal{
+      z-index: 120;
+      width: 300px;
+      .site-calendar-demo-card{
+        height: 200px;
+        .ant-picker-calendar{
+          height: 100%;
+          .ant-picker-panel{
+            height: 100%;
+          }
+        }
+      }
+      top: 0;
+      left: 9%;
+    }
+    #reservation{
+      display: none;
+    }
+    #cal2{
+      opacity: 0;
+      z-index: 120;
+      width: 300px;
+      .site-calendar-demo-card{
+        height: 300px;
+        .ant-picker-calendar{
+          height: 100%;
+          .ant-picker-panel{
+            height: 100%;
+            .ant-picker-date-panel{
+              height: 100%;
+            }
+          }
+        }
+      }
+      top: 50%;
+      left: 9%;
+    }
+    #facilities #f-img01{
+      width: 250px;
+      height: 250px;
+    }
+    #facilities #f-text{
+      top: 35%;
+      left: 4%;
+      width: 220px;
+      height: 100px;
+      padding: 8px;
+    }
+    #facilities #f-text div{
+      padding: 0;
+      width: 200px;
+      font-size: 12px;
+      line-height: 4  0px;
+      text-shadow: none;
+    }
+    #facilities #f-img02{
+      width: 225px;
+      height: 170px;
+      top: 30%;
+      left: 65%;
+    }
+    #facilities #f-img03{
+      width: 155px;
+      height: 180px;
+      top: 40%;
+      left: 2%;
+    }
+    #facilities #f-img04{
+      width: 140px;
+      height: 140px;
+      left: 50%;
+      top: 55%;
+    }
+    #facilities #f-img05{
+      width: 150px;
+      height: 150px;
+      left: 5%;
+      top: 70%;
+    }
+    .roomText span{
+      width: 500px;
+      font-size: 20px;
+    }
+    .roomText h2{
+      font-size: 60px;
+    }
+    #dining ul li{
+      
+    }
+    #dining ul li:hover{
+      width: 130%;
+    }
+    #dining ul li:hover .diningText{
+      width: 200px;
+    }
+    #dining ul li .diningText .mainDiningText p{
+      &:nth-child(4){
+        display: none;
+      }
+    }
+    #dining ul li .diningText h3{
+      font-size: 40px;
+    }
+    #activity{
+      display: none;
+    }
+    footer.positioning{
+      position: absolute;
+      bottom: 0;
+    }
+    footer .footerNotice{
+      position: absolute;
+      top: -370px;
+      left: 0;
+      width: 360px;
+      li{
+        width: 100%;
+        text-align: center;
+        &:not(:last-child){
+          margin-right: 10px;
+        }
+        &:last-child{
+          margin: 0;
+        }
+        &:nth-child(3){
+          font-size: 15px;
+        }
+      }
+    }
+    footer .footerInfo{
+      position: absolute;
+      top: -300px;
+      left: 5%;
+    }
+    footer{
+      display: none;
+    }
+    .empty{
+      display: none;
+    }
+    .qTDgg{
+      width: 60vw;
+    }
+    .res .res-confirm .mWrap .member h3{
+      font-size: 20px;
+    }
+    .res .res-confirm .mWrap .member p{
+      width: 100%;
+      font-size: 10px;
+    }
+    .res .res-confirm .mWrap .member .login .lWrap input{
+      height: 30px;
+      padding-left: 5px;
+    }
+    .res .res-confirm .mWrap .member .login button{
+      font-size: 12px;
+    }
+    #res-check > ul > li img{
+      width: 100%;
+    }
+    #res-check .reserListWrap > li{
+      padding: 0 5px;
+    }
+    #res-check .reserListWrap li{
+      font-size: 10px;
+    }
+    #res-check .reserListWrap li span{
+      font-size: 13px;
+    }
+    #brandS #aboutCon #brandS-t{
+      padding-top: 20px;
+    }
+    #brandS #aboutCon #brandS-t h2{
+      font-size: 29px;
+      width: 100%;
+    }
+    #brandS #aboutCon #brandS-m{
+      padding-top: 100px;
+    }
+    #brandS #aboutCon #brandS-t p{
+      padding: 0;
+      width: 100%;
+      font-size: 14px;
+    }
+    #brandS #aboutCon #brandS-m #bM #brandS-b{
+      top: 310%;
+    }
+    #brandS #aboutCon #brandS-m #bT{
+      padding-top: 400px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 360px;
+    }
+    #brandS #aboutCon #brandS-m #bM #brandS-b p{
+      text-shadow: none;
+      color: #000741;
+    }
+    #brandS #aboutCon #brandS-m #bT h2{
+      margin: 0;
+      text-align: center;
+    }
+    #brandS #aboutCon #brandS-m #bT p{
+      width: 100%;
+    }
+    #facilities h1{
+      left: 45%;
+      top: 10%;
+      z-index: 20;
+    }
+    #facilities{
+      min-width: 360px;
+    }
+    .roomDetailBody > ul > li{
+      flex-direction: column;
+      height: 400px;
+      >div{
+        width: 100%;
+        height: 187.5px;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    .roomDetailBody > ul > li > div img{
+      width: 100%;
+      height: auto;
+    }
+    .roomDetailBody > ul > li .roomExplain ul{
+      width: 100%;
+      top: 150%;
+      left: 0;
+    }
+    .superior{
+      top: 60%;
+    }
+    #diningIndex .dinDetailTitle h2{
+      font-size: 70px;
+    }
+    #diningIndex .dinDetailTitle span{
+      width: 360px;
+      left: 75%;
+    }
+    .diningCon h2{
+      padding-left: 10px;
+    }
+    }
